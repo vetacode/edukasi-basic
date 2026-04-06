@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edukasi Digitalisasi Bisnis</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      * {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: #0f172a;
+      }
+    </style>
+  </head>
+
+  <body class="text-gray-200 font-sans">
+    <!-- HERO -->
+    <section
+      class="relative h-screen flex items-center justify-center text-center"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b"
+        class="absolute w-full h-full object-cover opacity-20"
+      />
+
+      <div class="relative z-10 max-w-3xl px-6">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          Bisnis Tidak Akan Berkembang Jika Tidak
+          <span class="text-blue-400">Terlihat di Google</span>
+        </h1>
+        <p class="text-lg text-gray-300 mb-8">
+          Mulai digitalisasi bisnis dari nol, tanpa ribet coding.
+        </p>
+        <a href="#content">
+          <button
+            class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl font-semibold transition"
+          >
+            Mulai Belajar
+          </button>
+        </a>
+      </div>
+    </section>
+
+    <!-- PROGRESS -->
+    <section
+      class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur border-b border-slate-700"
+    >
+      <div class="max-w-4xl mx-auto px-6 py-4">
+        <div class="flex justify-between text-sm mb-2">
+          <span id="dayLabel">Day 1 / 7</span>
+          <span>Progress</span>
+        </div>
+        <div class="w-full bg-slate-700 rounded-full h-2">
+          <div
+            id="progressBar"
+            class="bg-blue-400 h-2 rounded-full transition-all duration-500"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section id="content" class="py-20 px-6 max-w-4xl mx-auto space-y-10">
+      <!-- CARD 1 -->
+      <div class="card">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="users" class="icon"></i>
+          <h3 class="title">Realita Perubahan Perilaku Customer</h3>
+        </div>
+        <p class="desc">
+          <strong>Dulu:</strong><br />
+          Orang tanya tetangga<br />
+          Jalan keliling cari toko<br />
+          Lihat spanduk<br /><br />
+
+          <strong>Sekarang:</strong><br />
+          Refleks pertama: buka Google<br /><br />
+
+          Bahkan untuk hal kecil:<br />
+          Cari makan<br />
+          Cari tukang<br />
+          Cari jasa
+        </p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="search" class="icon"></i>
+          <h3 class="title">Cara Orang Beli Sekarang</h3>
+        </div>
+        <p class="desc">
+          Ada kebutuhan<br />
+          Buka Google<br />
+          Ketik kata kunci<br />
+          Bandingkan beberapa pilihan<br />
+          Chat / beli<br /><br />
+
+          📌 Artinya:<br />
+          Kalau bisnis kamu tidak muncul di tahap no. 2<br />
+          ➡️ Kamu tidak masuk dalam pilihan
+        </p>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="card">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="alert-triangle" class="icon"></i>
+          <h3 class="title">Masalah Besar Pebisnis Pemula</h3>
+        </div>
+        <p class="desc">
+          Banyak yang berpikir:<br />
+          “Yang penting produk saya bagus”<br /><br />
+
+          Produk bagus tapi tidak terlihat = tidak laku<br />
+          Produk biasa tapi mudah ditemukan = bisa laku
+        </p>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="card">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="bar-chart" class="icon"></i>
+          <h3 class="title">Ilustrasi Simple</h3>
+        </div>
+        <p class="desc">
+          A: Produk bagus tapi tidak ada di Google<br />
+          B: Produk standar tapi muncul di Google<br /><br />
+
+          ➡️ Yang muncul di Google lebih sering dapat pelanggan
+        </p>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="card">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="brain" class="icon"></i>
+          <h3 class="title">Perubahan Cara Main Bisnis</h3>
+        </div>
+        <p class="desc">
+          Dulu: Lokasi strategis<br />
+          Sekarang: Posisi di Google<br /><br />
+
+          Bukan lagi soal tempat,<br />
+          tapi soal ditemukan
+        </p>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="card">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="x-circle" class="icon"></i>
+          <h3 class="title">Kesalahan Umum Pemula</h3>
+        </div>
+        <p class="desc">
+          Nanti saja kalau sudah besar<br />
+          Belum perlu online<br />
+          Masih kecil<br /><br />
+
+          Padahal:<br />
+          Bisnis kecil harus mulai digital duluan
+        </p>
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="card">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="dollar-sign" class="icon"></i>
+          <h3 class="title">Kenapa Google Powerful</h3>
+        </div>
+        <p class="desc">
+          Orang yang cari = sudah butuh<br /><br />
+
+          “jasa sedot wc sukabumi”<br /><br />
+
+          ➡️ Itu bukan iseng<br />
+          ➡️ Itu siap bayar
+        </p>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="card">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="target" class="icon"></i>
+          <h3 class="title">Insight Utama</h3>
+        </div>
+        <p class="desc">
+          Bukan yang paling bagus yang menang,<br />
+          tapi yang paling mudah ditemukan
+        </p>
+      </div>
+
+      <!-- CARD 9 -->
+      <div class="card">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="rocket" class="icon"></i>
+          <h3 class="title">Penutup</h3>
+        </div>
+        <p class="desc">
+          Kalau bisnis kamu belum ada di Google,<br />
+          berarti kamu belum masuk ke pilihan customer.<br /><br />
+
+          Mulai dari sekarang,<br />
+          pikirkan bagaimana caranya bisnis kamu bisa ditemukan.
+        </p>
+      </div>
+    </section>
+
+    <!-- NAV -->
+    <section class="max-w-4xl mx-auto px-6 pb-16 flex justify-between">
+      <button
+        id="prevBtn"
+        class="bg-slate-700 px-6 py-3 rounded-xl opacity-40 cursor-not-allowed"
+      >
+        ← Previous
+      </button>
+      <button
+        id="nextBtn"
+        onclick="nextDay()"
+        class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl"
+      >
+        Next →
+      </button>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 text-center">
+      <h2 class="text-3xl font-bold mb-4">Mulai Digitalisasi Sekarang</h2>
+      <p class="text-gray-400 mb-6">Jangan tunggu besar untuk mulai online.</p>
+      <a href="https://carisolusi.biz.id/2/news" target="_blank">
+        <button
+          class="bg-green-700 hover:bg-green-600 px-8 py-3 rounded-xl font-semibold"
+        >
+          Baca Artikel Lainnya
+        </button>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center py-8 border-t border-slate-700 text-gray-400">
+      © 2026 Copyright by Diamant Digital
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      let currentDay = 1;
+      const totalDays = 7;
+
+      const progressBar = document.getElementById('progressBar');
+      const dayLabel = document.getElementById('dayLabel');
+
+      function updateProgress() {
+        const progress = (currentDay / totalDays) * 100;
+        progressBar.style.width = progress + '%';
+        dayLabel.innerText = `Day ${currentDay} / ${totalDays}`;
+      }
+
+      function nextDay() {
+        alert('Nanti akan diarahkan ke Day 2');
+      }
+
+      updateProgress();
+
+      // animation
+      const cards = document.querySelectorAll('.card');
+
+      function revealCards() {
+        const triggerBottom = window.innerHeight * 0.85;
+
+        cards.forEach((card) => {
+          const cardTop = card.getBoundingClientRect().top;
+
+          if (cardTop < triggerBottom) {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }
+        });
+      }
+
+      window.addEventListener('scroll', revealCards);
+      window.addEventListener('load', revealCards);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      cards.forEach((card) => observer.observe(card));
+    </script>
+
+    <style>
+      .card {
+        background: rgba(30, 41, 59, 0.8);
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 24px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: 0.3s;
+        transform: translateY(40px);
+        opacity: 0;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .title {
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .desc {
+        font-size: 18px;
+        color: #cbd5f5;
+        line-height: 1.7;
+      }
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        color: #60a5fa;
+      }
+    </style>
+  </body>
+</html>
