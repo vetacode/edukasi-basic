@@ -8,12 +8,6 @@
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-
     <!-- Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -36,17 +30,17 @@
         class="absolute w-full h-full object-cover opacity-20"
       />
 
-      <div class="relative z-10 max-w-3xl px-6">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+      <div class="relative z-10 max-w-4xl px-6">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
           Bisnis Tidak Akan Berkembang Jika Tidak
           <span class="text-blue-400">Terlihat di Google</span>
         </h1>
-        <p class="text-lg text-gray-300 mb-8">
+        <p class="text-xl text-gray-300 mb-8">
           Mulai digitalisasi bisnis dari nol, tanpa ribet coding.
         </p>
         <a href="#content">
           <button
-            class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl font-semibold transition"
+            class="bg-blue-500 hover:bg-blue-600 px-8 py-4 rounded-2xl text-lg font-semibold transition"
           >
             Mulai Belajar
           </button>
@@ -55,15 +49,20 @@
     </section>
 
     <!-- CONTENT -->
-    <section id="content" class="py-16 px-6 max-w-4xl mx-auto space-y-8">
+    <section id="content" class="py-20 px-6 max-w-4xl mx-auto space-y-10">
+      <!-- CARD TEMPLATE STYLE: bigger, glass effect -->
+
       <!-- CARD 1 -->
       <div
-        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+        class="bg-slate-800/80 backdrop-blur p-10 rounded-3xl shadow-xl transition transform hover:-translate-y-2 opacity-0 translate-y-10"
       >
-        <h3 class="text-2xl font-bold mb-4">
-          Realita Perubahan Perilaku Customer
-        </h3>
-        <p class="text-gray-400 leading-relaxed">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="users" class="w-10 h-10 text-blue-400"></i>
+          <h3 class="text-3xl font-bold">
+            Realita Perubahan Perilaku Customer
+          </h3>
+        </div>
+        <p class="text-lg text-gray-300 leading-relaxed">
           <strong>Dulu:</strong><br />
           Orang tanya tetangga<br />
           Jalan keliling cari toko<br />
@@ -81,11 +80,13 @@
 
       <!-- CARD 2 -->
       <div
-        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+        class="bg-slate-800/80 backdrop-blur p-10 rounded-3xl shadow-xl transition transform hover:-translate-y-2 opacity-0 translate-y-10"
       >
-        <h3 class="text-2xl font-bold mb-4">🔍 Cara Orang Beli Sekarang</h3>
-        <p class="text-gray-400 leading-relaxed">
-          Sederhananya begini:<br /><br />
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="search" class="w-10 h-10 text-blue-400"></i>
+          <h3 class="text-3xl font-bold">Cara Orang Beli Sekarang</h3>
+        </div>
+        <p class="text-lg text-gray-300 leading-relaxed">
           Ada kebutuhan<br />
           Buka Google<br />
           Ketik kata kunci<br />
@@ -100,16 +101,16 @@
 
       <!-- CARD 3 -->
       <div
-        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+        class="bg-slate-800/80 backdrop-blur p-10 rounded-3xl shadow-xl transition transform hover:-translate-y-2 opacity-0 translate-y-10"
       >
-        <h3 class="text-2xl font-bold mb-4">
-          ❗ Masalah Besar Pebisnis Pemula
-        </h3>
-        <p class="text-gray-400 leading-relaxed">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="alert-triangle" class="w-10 h-10 text-blue-400"></i>
+          <h3 class="text-3xl font-bold">Masalah Besar Pebisnis Pemula</h3>
+        </div>
+        <p class="text-lg text-gray-300 leading-relaxed">
           Banyak yang berpikir:<br />
           “Yang penting produk saya bagus”<br /><br />
 
-          Padahal:<br />
           Produk bagus tapi tidak terlihat = tidak laku<br />
           Produk biasa tapi mudah ditemukan = bisa laku
         </p>
@@ -117,10 +118,13 @@
 
       <!-- CARD 4 -->
       <div
-        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+        class="bg-slate-800/80 backdrop-blur p-10 rounded-3xl shadow-xl transition transform hover:-translate-y-2 opacity-0 translate-y-10"
       >
-        <h3 class="text-2xl font-bold mb-4">🔥 Ilustrasi Simple</h3>
-        <p class="text-gray-400 leading-relaxed">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="bar-chart" class="w-10 h-10 text-blue-400"></i>
+          <h3 class="text-3xl font-bold">Ilustrasi Simple</h3>
+        </div>
+        <p class="text-lg text-gray-300 leading-relaxed">
           A: Produk bagus tapi tidak ada di Google<br />
           B: Produk standar tapi muncul di Google<br /><br />
 
@@ -130,10 +134,13 @@
 
       <!-- CARD 5 -->
       <div
-        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+        class="bg-slate-800/80 backdrop-blur p-10 rounded-3xl shadow-xl transition transform hover:-translate-y-2 opacity-0 translate-y-10"
       >
-        <h3 class="text-2xl font-bold mb-4">🧠 Perubahan Cara Main Bisnis</h3>
-        <p class="text-gray-400 leading-relaxed">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="brain" class="w-10 h-10 text-blue-400"></i>
+          <h3 class="text-3xl font-bold">Perubahan Cara Main Bisnis</h3>
+        </div>
+        <p class="text-lg text-gray-300 leading-relaxed">
           Dulu: Lokasi strategis<br />
           Sekarang: Posisi di Google<br /><br />
 
@@ -144,28 +151,33 @@
 
       <!-- CARD 6 -->
       <div
-        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+        class="bg-slate-800/80 backdrop-blur p-10 rounded-3xl shadow-xl transition transform hover:-translate-y-2 opacity-0 translate-y-10"
       >
-        <h3 class="text-2xl font-bold mb-4">⚠️ Kesalahan Umum Pemula</h3>
-        <p class="text-gray-400 leading-relaxed">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="x-circle" class="w-10 h-10 text-blue-400"></i>
+          <h3 class="text-3xl font-bold">Kesalahan Umum Pemula</h3>
+        </div>
+        <p class="text-lg text-gray-300 leading-relaxed">
           Nanti saja kalau sudah besar<br />
           Belum perlu online<br />
           Masih kecil<br /><br />
 
-          Padahal justru:<br />
+          Padahal:<br />
           Bisnis kecil harus mulai digital duluan
         </p>
       </div>
 
       <!-- CARD 7 -->
       <div
-        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+        class="bg-slate-800/80 backdrop-blur p-10 rounded-3xl shadow-xl transition transform hover:-translate-y-2 opacity-0 translate-y-10"
       >
-        <h3 class="text-2xl font-bold mb-4">💰 Kenapa Google Powerful</h3>
-        <p class="text-gray-400 leading-relaxed">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="dollar-sign" class="w-10 h-10 text-blue-400"></i>
+          <h3 class="text-3xl font-bold">Kenapa Google Powerful</h3>
+        </div>
+        <p class="text-lg text-gray-300 leading-relaxed">
           Orang yang cari = sudah butuh<br /><br />
 
-          Contoh:<br />
           “jasa sedot wc sukabumi”<br /><br />
 
           ➡️ Itu bukan iseng<br />
@@ -175,10 +187,13 @@
 
       <!-- CARD 8 -->
       <div
-        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+        class="bg-slate-800/80 backdrop-blur p-10 rounded-3xl shadow-xl transition transform hover:-translate-y-2 opacity-0 translate-y-10"
       >
-        <h3 class="text-2xl font-bold mb-4">🎯 Insight Utama</h3>
-        <p class="text-gray-400 leading-relaxed">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="target" class="w-10 h-10 text-blue-400"></i>
+          <h3 class="text-3xl font-bold">Insight Utama</h3>
+        </div>
+        <p class="text-lg text-gray-300 leading-relaxed">
           Bukan yang paling bagus yang menang,<br />
           tapi yang paling mudah ditemukan
         </p>
@@ -186,10 +201,13 @@
 
       <!-- CARD 9 -->
       <div
-        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+        class="bg-slate-800/80 backdrop-blur p-10 rounded-3xl shadow-xl transition transform hover:-translate-y-2 opacity-0 translate-y-10"
       >
-        <h3 class="text-2xl font-bold mb-4">🚀 Penutup</h3>
-        <p class="text-gray-400 leading-relaxed">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="rocket" class="w-10 h-10 text-blue-400"></i>
+          <h3 class="text-3xl font-bold">Penutup</h3>
+        </div>
+        <p class="text-lg text-gray-300 leading-relaxed">
           Kalau bisnis kamu belum ada di Google,<br />
           berarti kamu belum masuk ke pilihan customer.<br /><br />
 
@@ -200,11 +218,13 @@
     </section>
 
     <!-- CTA -->
-    <section class="py-16 text-center">
-      <h2 class="text-3xl font-bold mb-4">Mulai Digitalisasi Sekarang</h2>
-      <p class="text-gray-400 mb-6">Jangan tunggu besar untuk mulai online.</p>
+    <section class="py-20 text-center">
+      <h2 class="text-4xl font-bold mb-4">Mulai Digitalisasi Sekarang</h2>
+      <p class="text-gray-400 mb-8 text-lg">
+        Jangan tunggu besar untuk mulai online.
+      </p>
       <button
-        class="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-xl font-semibold transition"
+        class="bg-green-500 hover:bg-green-600 px-10 py-4 rounded-2xl text-lg font-semibold transition"
       >
         Konsultasi Gratis
       </button>
@@ -213,8 +233,7 @@
     <script>
       lucide.createIcons();
 
-      // simple animation on scroll
-      const cards = document.querySelectorAll('.bg-slate-800');
+      const cards = document.querySelectorAll('section#content > div');
       window.addEventListener('scroll', () => {
         cards.forEach((card) => {
           const rect = card.getBoundingClientRect();
