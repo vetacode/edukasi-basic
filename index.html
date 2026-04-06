@@ -257,23 +257,340 @@
 
       const progressBar = document.getElementById('progressBar');
       const dayLabel = document.getElementById('dayLabel');
+      const content = document.getElementById('content');
+      const prevBtn = document.getElementById('prevBtn');
 
       function updateProgress() {
         const progress = (currentDay / totalDays) * 100;
         progressBar.style.width = progress + '%';
         dayLabel.innerText = `Day ${currentDay} / ${totalDays}`;
+
+        // disable prev di day 1
+        if (currentDay === 1) {
+          prevBtn.classList.add('opacity-40', 'cursor-not-allowed');
+        } else {
+          prevBtn.classList.remove('opacity-40', 'cursor-not-allowed');
+        }
+      }
+
+      function renderContent() {
+        if (currentDay === 1) {
+          content.innerHTML = day1Content;
+        } else if (currentDay === 2) {
+          content.innerHTML = day2Content;
+        } else if (currentDay === 3) {
+          content.innerHTML = day3Content;
+        }
+
+        lucide.createIcons();
+        revealCards();
       }
 
       function nextDay() {
-        alert('Nanti akan diarahkan ke Day 2');
+        if (currentDay < totalDays) {
+          currentDay++;
+          updateProgress();
+          renderContent();
+          window.scrollTo(0, 0);
+        }
       }
 
-      updateProgress();
+      function prevDay() {
+        if (currentDay > 1) {
+          currentDay--;
+          updateProgress();
+          renderContent();
+          window.scrollTo(0, 0);
+        }
+      }
 
-      // animation
-      const cards = document.querySelectorAll('.card');
+      prevBtn.onclick = prevDay;
 
+      // =====================
+      // DAY 1 (EXISTING)
+      // =====================
+      const day1Content = content.innerHTML;
+
+      // =====================
+      // DAY 2 (NEW)
+      // =====================
+      const day2Content = `
+
+        <div class="card">
+          <div class="flex items-center gap-4 mb-6">
+            <i data-lucide="alert-circle" class="icon"></i>
+            <h3 class="title">Masalah Utama Pebisnis Offline</h3>
+          </div>
+          <p class="desc">
+            Teman-teman, kita jujur ya…<br /><br />
+            Kenapa banyak bisnis offline susah berkembang?
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="flex items-center gap-4 mb-6">
+            <i data-lucide="x-circle" class="icon"></i>
+            <h3 class="title">Penyebab Utama</h3>
+          </div>
+          <p class="desc">
+            ❌ Nunggu pelanggan datang<br />
+            ❌ Promosi cuma dari mulut ke mulut<br />
+            ❌ Tidak punya “aset digital”
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="flex items-center gap-4 mb-6">
+            <i data-lucide="trending-down" class="icon"></i>
+            <h3 class="title">Dampaknya</h3>
+          </div>
+          <p class="desc">
+            Sepi kalau tidak ada traffic<br />
+            Tidak scalable<br />
+            Kalah sama yang sudah online
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="flex items-center gap-4 mb-6">
+            <i data-lucide="git-compare" class="icon"></i>
+            <h3 class="title">Contoh Nyata</h3>
+          </div>
+          <p class="desc">
+            Ada 2 tukang service AC:<br /><br />
+            Tidak punya online presence<br />
+            Punya website + muncul di Google<br /><br />
+            👉 Yang mana lebih sering dapat pelanggan?
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="flex items-center gap-4 mb-6">
+            <i data-lucide="target" class="icon"></i>
+            <h3 class="title">Insight</h3>
+          </div>
+          <p class="desc">
+            Kalau mau naik level:<br />
+            ➡️ Harus punya “mesin pencari pelanggan”
+          </p>
+        </div>
+
+        <div class="card">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="clock" class="icon"></i>
+          <h3 class="title">Masalah: Bergantung Waktu & Lokasi</h3>
+        </div>
+        <p class="desc">
+          Bisnis offline hanya jalan saat:<br />
+          Toko buka<br />
+          Orang lewat<br /><br />
+
+          Di luar itu?<br />
+          ➡️ Tidak ada pelanggan<br /><br />
+
+          Artinya:<br />
+          Kamu kehilangan banyak potensi pembeli setiap hari
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="users-2" class="icon"></i>
+          <h3 class="title">Masalah: Pasar Terbatas</h3>
+        </div>
+        <p class="desc">
+          Offline = hanya orang sekitar<br /><br />
+
+          Padahal:<br />
+          Banyak orang di luar sana butuh jasa kamu<br /><br />
+
+          Tapi karena tidak online:<br />
+          ➡️ Mereka tidak pernah tahu kamu ada
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="alert-octagon" class="icon"></i>
+          <h3 class="title">Masalah: Tidak Punya Kontrol Traffic</h3>
+        </div>
+        <p class="desc">
+          Kamu tidak bisa mengatur:<br />
+          Hari ini ramai atau sepi<br /><br />
+
+          Semua tergantung:<br />
+          Keberuntungan<br />
+          Orang lewat<br /><br />
+
+          ➡️ Ini berbahaya untuk jangka panjang
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="flex items-center gap-4 mb-6">
+          <i data-lucide="trending-up" class="icon"></i>
+          <h3 class="title">Kesimpulan Besar Day 2</h3>
+        </div>
+        <p class="desc">
+          Masalah utama bukan di produk<br />
+          Tapi di sistem mendapatkan pelanggan<br /><br />
+
+          Kalau sistemnya tidak ada:<br />
+          ➡️ Bisnis akan stuck<br /><br />
+
+          📌 Solusi ke depan:<br />
+          Kita butuh sistem yang bisa datangkan pelanggan secara konsisten
+        </p>
+      </div>
+      
+
+      
+        `;
+
+      const day3Content = `
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="activity" class="icon"></i>
+    <h3 class="title">Kenalan dengan Traffic</h3>
+  </div>
+  <p class="desc">
+    Hari ini kita bahas hal paling penting di bisnis digital:<br /><br />
+    👉 Traffic<br /><br />
+    Sederhananya:<br />
+    Traffic = orang yang datang ke bisnis kita
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="users" class="icon"></i>
+    <h3 class="title">Kenapa Traffic Itu Penting?</h3>
+  </div>
+  <p class="desc">
+    Tidak ada traffic = tidak ada pelanggan<br /><br />
+    Mau produk sebagus apapun:<br />
+    ➡️ Kalau tidak ada yang lihat, tidak akan laku
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="git-branch" class="icon"></i>
+    <h3 class="title">3 Sumber Traffic</h3>
+  </div>
+  <p class="desc">
+    Ada 3 sumber utama:<br /><br />
+    1. Offline<br />
+    2. Sosial Media<br />
+    3. Google<br /><br />
+
+    Kita bahas satu-satu
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="map-pin" class="icon"></i>
+    <h3 class="title">Traffic Offline</h3>
+  </div>
+  <p class="desc">
+    Contoh:<br />
+    Orang lewat depan toko<br />
+    Spanduk<br />
+    Rekomendasi<br /><br />
+
+    ❗ Kelemahan:<br />
+    Terbatas lokasi<br />
+    Tidak konsisten
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="instagram" class="icon"></i>
+    <h3 class="title">Traffic Sosial Media</h3>
+  </div>
+  <p class="desc">
+    Contoh:<br />
+    IG, TikTok, Facebook<br /><br />
+
+    Kelebihan:<br />
+    Bisa viral<br /><br />
+
+    ❗ Kekurangan:<br />
+    Harus konsisten bikin konten<br />
+    Belum tentu siap beli
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="search" class="icon"></i>
+    <h3 class="title">Traffic Google (Paling Powerful)</h3>
+  </div>
+  <p class="desc">
+    Ini yang paling penting 🔥<br /><br />
+
+    Orang buka Google karena:<br />
+    ➡️ Sudah butuh<br />
+    ➡️ Tinggal cari<br />
+    ➡️ Tinggal pilih
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="zap" class="icon"></i>
+    <h3 class="title">Kenapa Google Lebih Kuat?</h3>
+  </div>
+  <p class="desc">
+    Di Google:<br /><br />
+    ❌ Bukan scroll iseng<br />
+    ✅ Tapi cari solusi<br /><br />
+
+    Artinya:<br />
+    Peluang closing jauh lebih tinggi
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="message-square" class="icon"></i>
+    <h3 class="title">Contoh Nyata</h3>
+  </div>
+  <p class="desc">
+    Orang ketik:<br /><br />
+    “service kulkas sukabumi”<br /><br />
+
+    Itu artinya:<br />
+    ➡️ Kulkas rusak<br />
+    ➡️ Butuh cepat<br />
+    ➡️ Siap bayar
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="target" class="icon"></i>
+    <h3 class="title">Insight Utama Day 3</h3>
+  </div>
+  <p class="desc">
+    Semua bisnis butuh traffic<br /><br />
+
+    Tapi:<br />
+    Tidak semua traffic punya kualitas sama<br /><br />
+
+    📌 Traffic Google = paling siap jadi pelanggan
+  </p>
+</div>
+
+`;
+      // =====================
+      // ANIMATION
+      // =====================
       function revealCards() {
+        const cards = document.querySelectorAll('.card');
         const triggerBottom = window.innerHeight * 0.85;
 
         cards.forEach((card) => {
@@ -288,18 +605,8 @@
 
       window.addEventListener('scroll', revealCards);
       window.addEventListener('load', revealCards);
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.remove('opacity-0', 'translate-y-10');
-            }
-          });
-        },
-        { threshold: 0.1 },
-      );
 
-      cards.forEach((card) => observer.observe(card));
+      updateProgress();
     </script>
 
     <style>
