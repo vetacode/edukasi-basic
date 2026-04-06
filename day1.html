@@ -1,9 +1,6 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edukasi Digitalisasi Bisnis</title>
@@ -21,169 +18,198 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
+      * {
+        scroll-behavior: smooth;
+      }
       body {
         background-color: #0f172a;
       }
     </style>
   </head>
-  <body>
+  <body class="text-gray-200 font-sans">
     <!-- HERO -->
     <section
       class="relative h-screen flex items-center justify-center text-center"
     >
       <img
         src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b"
-        class="absolute w-full h-full object-cover opacity-20 img-responsive"
+        class="absolute w-full h-full object-cover opacity-20"
       />
 
       <div class="relative z-10 max-w-3xl px-6">
-        <h1
-          class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-gray-100"
-        >
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
           Bisnis Tidak Akan Berkembang Jika Tidak
           <span class="text-blue-400">Terlihat di Google</span>
         </h1>
         <p class="text-lg text-gray-300 mb-8">
           Mulai digitalisasi bisnis dari nol, tanpa ribet coding.
         </p>
-        <button
-          class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl font-semibold transition text-gray-100"
-        >
-          Mulai Belajar
-        </button>
+        <a href="#content">
+          <button
+            class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl font-semibold transition"
+          >
+            Mulai Belajar
+          </button>
+        </a>
       </div>
     </section>
 
     <!-- CONTENT -->
-    <section class="py-16 px-6 max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- CARD -->
-        <div
-          class="bg-slate-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            data-lucide="search"
-            aria-hidden="true"
-            class="lucide lucide-search w-8 h-8 text-blue-400 mb-4"
-          >
-            <path d="m21 21-4.34-4.34"></path>
-            <circle cx="11" cy="11" r="8"></circle>
-          </svg>
-          <h3 class="text-xl font-semibold mb-3 text-gray-100">
-            Perubahan Perilaku Customer
-          </h3>
-          <p class="text-gray-400">
-            Sekarang hampir semua orang mencari di Google sebelum membeli.
-          </p>
-        </div>
+    <section id="content" class="py-16 px-6 max-w-4xl mx-auto space-y-8">
+      <!-- CARD 1 -->
+      <div
+        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+      >
+        <h3 class="text-2xl font-bold mb-4">
+          Realita Perubahan Perilaku Customer
+        </h3>
+        <p class="text-gray-400 leading-relaxed">
+          <strong>Dulu:</strong><br />
+          Orang tanya tetangga<br />
+          Jalan keliling cari toko<br />
+          Lihat spanduk<br /><br />
 
-        <div
-          class="bg-slate-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition text-gray-100"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            data-lucide="trending-up"
-            aria-hidden="true"
-            class="lucide lucide-trending-up w-8 h-8 text-blue-400 mb-4"
-          >
-            <path d="M16 7h6v6"></path>
-            <path d="m22 7-8.5 8.5-5-5L2 17"></path>
-          </svg>
-          <h3 class="text-xl font-semibold mb-3 text-gray-100">
-            Cara Orang Beli
-          </h3>
-          <p class="text-gray-400">
-            Mereka mencari, membandingkan, lalu langsung chat dan closing.
-          </p>
-        </div>
+          <strong>Sekarang:</strong><br />
+          Refleks pertama: buka Google<br /><br />
 
-        <div
-          class="bg-slate-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            data-lucide="alert-circle"
-            aria-hidden="true"
-            class="lucide lucide-alert-circle w-8 h-8 text-blue-400 mb-4"
-          >
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" x2="12" y1="8" y2="12"></line>
-            <line x1="12" x2="12.01" y1="16" y2="16"></line>
-          </svg>
-          <h3 class="text-xl font-semibold mb-3 text-gray-100">Masalah Umum</h3>
-          <p class="text-gray-400">
-            Banyak bisnis bagus tapi tidak terlihat di internet.
-          </p>
-        </div>
+          Bahkan untuk hal kecil:<br />
+          Cari makan<br />
+          Cari tukang<br />
+          Cari jasa
+        </p>
+      </div>
 
-        <div
-          class="bg-slate-800 p-6 rounded-2xl shadow-lg hover:scale-105 transition"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            data-lucide="zap"
-            aria-hidden="true"
-            class="lucide lucide-zap w-8 h-8 text-blue-400 mb-4"
-          >
-            <path
-              d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"
-            ></path>
-          </svg>
-          <h3 class="text-xl font-semibold mb-3 text-gray-100">
-            Insight Utama
-          </h3>
-          <p class="text-gray-400">
-            Yang mudah ditemukan akan lebih cepat dapat pelanggan.
-          </p>
-        </div>
+      <!-- CARD 2 -->
+      <div
+        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+      >
+        <h3 class="text-2xl font-bold mb-4">🔍 Cara Orang Beli Sekarang</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Sederhananya begini:<br /><br />
+          Ada kebutuhan<br />
+          Buka Google<br />
+          Ketik kata kunci<br />
+          Bandingkan beberapa pilihan<br />
+          Chat / beli<br /><br />
+
+          📌 Artinya:<br />
+          Kalau bisnis kamu tidak muncul di tahap no. 2<br />
+          ➡️ Kamu tidak masuk dalam pilihan
+        </p>
+      </div>
+
+      <!-- CARD 3 -->
+      <div
+        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+      >
+        <h3 class="text-2xl font-bold mb-4">
+          ❗ Masalah Besar Pebisnis Pemula
+        </h3>
+        <p class="text-gray-400 leading-relaxed">
+          Banyak yang berpikir:<br />
+          “Yang penting produk saya bagus”<br /><br />
+
+          Padahal:<br />
+          Produk bagus tapi tidak terlihat = tidak laku<br />
+          Produk biasa tapi mudah ditemukan = bisa laku
+        </p>
+      </div>
+
+      <!-- CARD 4 -->
+      <div
+        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+      >
+        <h3 class="text-2xl font-bold mb-4">🔥 Ilustrasi Simple</h3>
+        <p class="text-gray-400 leading-relaxed">
+          A: Produk bagus tapi tidak ada di Google<br />
+          B: Produk standar tapi muncul di Google<br /><br />
+
+          ➡️ Yang muncul di Google lebih sering dapat pelanggan
+        </p>
+      </div>
+
+      <!-- CARD 5 -->
+      <div
+        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+      >
+        <h3 class="text-2xl font-bold mb-4">🧠 Perubahan Cara Main Bisnis</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Dulu: Lokasi strategis<br />
+          Sekarang: Posisi di Google<br /><br />
+
+          Bukan lagi soal tempat,<br />
+          tapi soal ditemukan
+        </p>
+      </div>
+
+      <!-- CARD 6 -->
+      <div
+        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+      >
+        <h3 class="text-2xl font-bold mb-4">⚠️ Kesalahan Umum Pemula</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Nanti saja kalau sudah besar<br />
+          Belum perlu online<br />
+          Masih kecil<br /><br />
+
+          Padahal justru:<br />
+          Bisnis kecil harus mulai digital duluan
+        </p>
+      </div>
+
+      <!-- CARD 7 -->
+      <div
+        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+      >
+        <h3 class="text-2xl font-bold mb-4">💰 Kenapa Google Powerful</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Orang yang cari = sudah butuh<br /><br />
+
+          Contoh:<br />
+          “jasa sedot wc sukabumi”<br /><br />
+
+          ➡️ Itu bukan iseng<br />
+          ➡️ Itu siap bayar
+        </p>
+      </div>
+
+      <!-- CARD 8 -->
+      <div
+        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+      >
+        <h3 class="text-2xl font-bold mb-4">🎯 Insight Utama</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Bukan yang paling bagus yang menang,<br />
+          tapi yang paling mudah ditemukan
+        </p>
+      </div>
+
+      <!-- CARD 9 -->
+      <div
+        class="bg-slate-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1"
+      >
+        <h3 class="text-2xl font-bold mb-4">🚀 Penutup</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Kalau bisnis kamu belum ada di Google,<br />
+          berarti kamu belum masuk ke pilihan customer.<br /><br />
+
+          Mulai dari sekarang,<br />
+          pikirkan bagaimana caranya bisnis kamu bisa ditemukan.
+        </p>
       </div>
     </section>
 
     <!-- CTA -->
     <section class="py-16 text-center">
-      <h2 class="text-3xl font-bold mb-4 text-gray-100">
-        Mulai Digitalisasi Sekarang
-      </h2>
+      <h2 class="text-3xl font-bold mb-4">Mulai Digitalisasi Sekarang</h2>
       <p class="text-gray-400 mb-6">Jangan tunggu besar untuk mulai online.</p>
       <button
-        class="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-xl font-semibold transition text-gray-100"
+        class="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-xl font-semibold transition"
       >
         Konsultasi Gratis
       </button>
     </section>
+
     <script>
       lucide.createIcons();
 
