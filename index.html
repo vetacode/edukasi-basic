@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edukasi Digitalisasi Bisnis</title>
+    <link
+      rel="icon"
+      type="image/webp"
+      href="https://carisolusi.biz.id/gambarbebas/20260322-103256_logo-diamant-blue.webp"
+    />
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -225,7 +230,8 @@
       <button
         id="nextBtn"
         onclick="nextDay()"
-        class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl"
+        class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl cursor-not-allowed"
+        disabled
       >
         Next →
       </button>
@@ -246,7 +252,7 @@
 
     <!-- FOOTER -->
     <footer class="text-center py-8 border-t border-slate-700 text-gray-400">
-      © 2026 Copyright by Diamant Digital
+      © 2026 Copyright by Diamant Digital. All rights reserved.
     </footer>
 
     <script>
@@ -441,15 +447,10 @@
           📌 Solusi ke depan:<br />
           Kita butuh sistem yang bisa datangkan pelanggan secara konsisten
         </p>
-      </div>
-      
-
-      
+      </div>    
         `;
 
-      const day3Content = `
-
-<div class="card">
+      const day3Content = `<div class="card">
   <div class="flex items-center gap-4 mb-6">
     <i data-lucide="activity" class="icon"></i>
     <h3 class="title">Kenalan dengan Traffic</h3>
