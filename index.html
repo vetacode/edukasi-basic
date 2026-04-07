@@ -232,7 +232,6 @@
         id="nextBtn"
         onclick="nextDay()"
         class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl cursor-not-allowed"
-        disabled
       >
         Next →
       </button>
@@ -287,6 +286,8 @@
           content.innerHTML = day2Content;
         } else if (currentDay === 3) {
           content.innerHTML = day3Content;
+        } else if (currentDay === 4) {
+          content.innerHTML = day4Content;
         }
 
         lucide.createIcons();
@@ -450,7 +451,9 @@
         </p>
       </div>    
         `;
-
+      // =====================
+      // DAY 3
+      // =====================
       const day3Content = `<div class="card">
   <div class="flex items-center gap-4 mb-6">
     <i data-lucide="activity" class="icon"></i>
@@ -588,6 +591,151 @@
 </div>
 
 `;
+
+      // =====================
+      // DAY 4
+      // =====================
+
+      const day4Content = `
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="layout" class="icon"></i>
+    <h3 class="title">Kenapa Harus Punya Website?</h3>
+  </div>
+  <p class="desc">
+    Teman-teman, banyak yang mikir:<br /><br />
+    “Jualan cukup di WA / IG aja”<br /><br />
+    Padahal… itu belum cukup untuk scale bisnis
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="alert-circle" class="icon"></i>
+    <h3 class="title">Masalah Jualan Hanya di WA / IG</h3>
+  </div>
+  <p class="desc">
+    WA:<br />
+    ❌ Tidak bisa dicari di Google<br /><br />
+
+    IG / TikTok:<br />
+    ❌ Harus terus upload konten<br />
+    ❌ Tidak stabil<br /><br />
+
+    ➡️ Artinya: tidak punya sistem jangka panjang
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="globe" class="icon"></i>
+    <h3 class="title">Website = Rumah Digital</h3>
+  </div>
+  <p class="desc">
+    Website itu seperti:<br /><br />
+    🏠 Toko / kantor di internet<br /><br />
+
+    Bedanya:<br />
+    ➡️ Bisa diakses 24 jam<br />
+    ➡️ Bisa ditemukan dari Google
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="search" class="icon"></i>
+    <h3 class="title">Peran Website di Google</h3>
+  </div>
+  <p class="desc">
+    Google butuh “halaman” untuk ditampilkan<br /><br />
+
+    ➡️ Website = yang muncul di Google<br /><br />
+
+    Tanpa website:<br />
+    ❌ Kamu tidak punya tempat untuk tampil
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="check-circle" class="icon"></i>
+    <h3 class="title">Fungsi Utama Website</h3>
+  </div>
+  <p class="desc">
+    ✅ Muncul di Google<br />
+    ✅ Menjelaskan produk/jasa<br />
+    ✅ Menampilkan foto & testimoni<br />
+    ✅ Mengarahkan ke WhatsApp<br /><br />
+
+    ➡️ Semua jadi lebih profesional
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="shield-check" class="icon"></i>
+    <h3 class="title">Website Meningkatkan Trust</h3>
+  </div>
+  <p class="desc">
+    Kalau customer lihat:<br />
+    Ada website<br />
+    Ada informasi jelas<br /><br />
+
+    ➡️ Mereka lebih percaya<br /><br />
+
+    Dibanding:<br />
+    Akun tanpa identitas jelas
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="clock" class="icon"></i>
+    <h3 class="title">Website Bekerja 24 Jam</h3>
+  </div>
+  <p class="desc">
+    Bahkan saat kamu tidur:<br /><br />
+    Website tetap bisa:<br />
+    ➡️ Ditemukan di Google<br />
+    ➡️ Dibaca calon customer<br />
+    ➡️ Menghasilkan chat masuk
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="cpu" class="icon"></i>
+    <h3 class="title">Website = Mesin Traffic</h3>
+  </div>
+  <p class="desc">
+    Website bukan sekadar tampilan<br /><br />
+
+    Tapi:<br />
+    ➡️ Mesin untuk menarik pengunjung<br />
+    ➡️ Mesin untuk menghasilkan pelanggan<br /><br />
+
+    Kalau dioptimasi dengan benar
+  </p>
+</div>
+
+<div class="card">
+  <div class="flex items-center gap-4 mb-6">
+    <i data-lucide="target" class="icon"></i>
+    <h3 class="title">Insight Utama Day 4</h3>
+  </div>
+  <p class="desc">
+    Kalau mau dapat pelanggan dari Google:<br /><br />
+
+    ➡️ Harus punya website<br /><br />
+
+    Tanpa itu:<br />
+    Kamu tidak ikut dalam permainan
+  </p>
+</div>
+
+`;
+
       // =====================
       // ANIMATION
       // =====================
