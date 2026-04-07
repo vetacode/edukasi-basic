@@ -80,12 +80,13 @@
     <!-- HERO -->
     <section
       class="relative h-screen flex items-center justify-center text-center"
+      id="hero"
     >
       <!-- DAY NAV QUICK ACCESS -->
 
       <div class="absolute top-8 left-1/2 transform -translate-x-1/2 z-20">
-        Akses Halaman
-        <div class="flex gap-2 flex-wrap justify-center">
+        Materi Ke -
+        <div class="flex gap-2 flex-wrap justify-center mt-2">
           <a href="#content">
             <button onclick="goToDay(1)" class="dayBtn">1</button>
             <button onclick="goToDay(2)" class="dayBtn">2</button>
@@ -293,13 +294,22 @@
       >
         ← Previous
       </button>
-      <button
+      <!-- <button
         id="nextBtn"
         onclick="nextDay()"
         class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl cursor-not-allowed"
+        disabled
       >
         Next →
-      </button>
+      </button> -->
+      <a href="#hero">
+        <button
+          id="up"
+          class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-xl"
+        >
+          Kembali ke Atas
+        </button>
+      </a>
     </section>
 
     <!-- CTA -->
@@ -375,6 +385,43 @@
     </footer>
 
     <script>
+      let unlockedDay = 1; // default hari ini (ubah manual)
+      function updateDayButtonsAccess() {
+        const buttons = document.querySelectorAll('.dayBtn');
+
+        buttons.forEach((btn, index) => {
+          const day = index + 1;
+
+          if (day <= unlockedDay) {
+            btn.disabled = false;
+            btn.classList.remove('opacity-40', 'cursor-not-allowed');
+          } else {
+            btn.disabled = true;
+            btn.classList.add('opacity-40', 'cursor-not-allowed');
+          }
+        });
+      }
+
+      function goToDay(day) {
+        if (day > unlockedDay) return; // ❌ blok akses
+
+        currentDay = day;
+        updateProgress();
+        renderContent();
+        updateActiveDayBtn();
+        window.scrollTo(0, 0);
+      }
+
+      updateDayButtonsAccess();
+
+      // const startDate = new Date('2026-04-07'); // hari mulai program
+      // const today = new Date();
+
+      // const diffTime = today - startDate;
+      // const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+
+      // let unlockedDay = Math.min(diffDays, totalDays);
+
       lucide.createIcons();
 
       let currentDay = 1;
