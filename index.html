@@ -56,6 +56,23 @@
         height: 40px;
         color: #60a5fa;
       }
+
+      .dayBtn {
+        background: rgba(30, 41, 59, 0.8);
+        border: 1px solid #334155;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.2s;
+      }
+
+      .dayBtn:hover {
+        background: #3b82f6;
+      }
+
+      .dayBtn.active {
+        background: #3b82f6;
+      }
     </style>
   </head>
 
@@ -64,6 +81,22 @@
     <section
       class="relative h-screen flex items-center justify-center text-center"
     >
+      <!-- DAY NAV QUICK ACCESS -->
+
+      <div class="absolute top-8 left-1/2 transform -translate-x-1/2 z-20">
+        Akses Halaman
+        <div class="flex gap-2 flex-wrap justify-center">
+          <a href="#content">
+            <button onclick="goToDay(1)" class="dayBtn">1</button>
+            <button onclick="goToDay(2)" class="dayBtn">2</button>
+            <button onclick="goToDay(3)" class="dayBtn">3</button>
+            <button onclick="goToDay(4)" class="dayBtn">4</button>
+            <button onclick="goToDay(5)" class="dayBtn">5</button>
+            <button onclick="goToDay(6)" class="dayBtn">6</button>
+            <button onclick="goToDay(7)" class="dayBtn">7</button>
+          </a>
+        </div>
+      </div>
       <img
         src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b"
         class="absolute w-full h-full object-cover opacity-20"
@@ -353,6 +386,14 @@
       const prevBtn = document.getElementById('prevBtn');
       const ctaFinal = document.getElementById('ctaFinal');
 
+      function goToDay(day) {
+        currentDay = day;
+        updateProgress();
+        renderContent();
+        updateActiveDayBtn();
+        window.scrollTo(0, 0);
+      }
+
       function updateProgress() {
         const progress = (currentDay / totalDays) * 100;
         progressBar.style.width = progress + '%';
@@ -364,6 +405,17 @@
         } else {
           prevBtn.classList.remove('opacity-40', 'cursor-not-allowed');
         }
+        updateActiveDayBtn();
+      }
+
+      function updateActiveDayBtn() {
+        const buttons = document.querySelectorAll('.dayBtn');
+        buttons.forEach((btn, index) => {
+          btn.classList.remove('active');
+          if (index + 1 === currentDay) {
+            btn.classList.add('active');
+          }
+        });
       }
 
       function renderContent() {
