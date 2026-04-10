@@ -1,0 +1,1189 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cijaliti Road Race</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap');
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 15px 0;
+        background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #182848);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Outfit', sans-serif;
+        color: white;
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .game-container {
+        position: relative;
+        width: 400px;
+        height: 600px;
+        box-shadow:
+          0 20px 50px rgba(0, 0, 0, 0.7),
+          0 0 30px rgba(0, 242, 254, 0.2);
+        background-color: #2c3e50;
+        overflow: hidden;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      canvas {
+        display: block;
+      }
+
+      #scoreDisplay {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 28px;
+        font-weight: 900;
+        color: #fff;
+        text-shadow:
+          0 0 15px #f39c12,
+          0 0 25px #f1c40f;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.35);
+        padding: 6px 20px;
+        border-radius: 30px;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      #gameOverScreen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(12, 16, 28, 0.75);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 20;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      #screenTitle {
+        font-size: 32px;
+        font-weight: 900;
+        margin-bottom: 5px;
+        background: linear-gradient(to right, #00f2fe, #4facfe);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+        padding: 0 10px;
+        animation: floatTitle 3s ease-in-out infinite;
+        filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.4));
+      }
+
+      @keyframes floatTitle {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      #scoreText {
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 20px;
+        color: #e2e8f0;
+        text-align: center;
+      }
+
+      #finalScore {
+        font-size: 30px;
+        font-weight: 800;
+        color: #f1c40f;
+        text-shadow: 0 0 15px rgba(241, 196, 15, 0.5);
+        display: block;
+        margin-top: 5px;
+      }
+
+      .input-container {
+        width: 88%;
+        margin-bottom: 15px;
+      }
+
+      #playerNameInput,
+      #playerWAInput {
+        width: 100%;
+        padding: 13px 20px;
+        font-size: 16px;
+        font-family: 'Outfit', sans-serif;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.3);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        text-align: center;
+        outline: none;
+        transition: all 0.3s ease;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+        margin-bottom: 5px;
+      }
+
+      #playerNameInput::placeholder,
+      #playerWAInput::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      #playerNameInput:focus,
+      #playerWAInput:focus {
+        border-color: #00f2fe;
+        background: rgba(0, 242, 254, 0.1);
+        box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+      }
+
+      .car-selection {
+        width: 88%;
+        background: rgba(255, 255, 255, 0.04);
+        padding: 15px 15px;
+        border-radius: 18px;
+        border: 1px inset rgba(255, 255, 255, 0.1);
+        margin-bottom: 25px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      }
+
+      .car-selection p {
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #94a3b8;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      .car-options {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .car-btn {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.03);
+        border: 2px solid rgba(255, 255, 255, 0.05);
+        color: #cbd5e1;
+        padding: 10px 5px;
+        border-radius: 14px;
+        cursor: pointer;
+        font-size: 12px;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .car-emoji {
+        font-size: 28px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+      }
+
+      .car-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-4px);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .car-btn.selected {
+        border-color: #00f2fe;
+        background: rgba(0, 242, 254, 0.15);
+        color: #ffffff;
+        transform: scale(1.08) translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 242, 254, 0.25);
+      }
+
+      #restartBtn {
+        padding: 14px 40px;
+        font-size: 20px;
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 8px 25px rgba(0, 114, 255, 0.4);
+      }
+
+      #restartBtn:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 12px 30px rgba(0, 114, 255, 0.6);
+      }
+
+      #restartBtn:active {
+        transform: translateY(2px);
+      }
+
+      .controls-info {
+        margin-top: 15px;
+        color: #cbd5e1;
+        font-size: 14px;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 10px 20px;
+        border-radius: 50px;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        font-weight: 300;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .controls-info strong {
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .ad-banner {
+        margin-top: 10px;
+        background: linear-gradient(135deg, #f6d365, #fda085);
+        padding: 12px 15px;
+        border-radius: 15px;
+        color: #1e293b;
+        text-align: center;
+        font-weight: 600;
+        font-size: 14px;
+        box-shadow: 0 6px 20px rgba(253, 160, 133, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        max-width: 380px;
+        animation: pulseAd 2s infinite;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .ad-banner p {
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      .wa-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #25d366;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+      }
+
+      .wa-btn:hover {
+        background-color: #1ebe57;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 6px 15px rgba(37, 211, 102, 0.6);
+      }
+
+      .wa-btn i {
+        font-size: 18px;
+      }
+
+      @keyframes pulseAd {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.02);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-container">
+      <canvas id="gameCanvas" width="400" height="600"></canvas>
+      <div id="scoreDisplay">Skor: 0</div>
+
+      <div
+        id="tahap2Screen"
+        class="hidden"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(12, 16, 28, 0.85);
+          z-index: 30;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          backdrop-filter: blur(8px);
+        "
+      >
+        <h2
+          style="
+            color: #f1c40f;
+            margin-bottom: 5px;
+            font-size: 28px;
+            text-shadow: 0 0 10px #f1c40f;
+          "
+        >
+          <i class="fa-solid fa-bolt"></i> Tahap 2 Terbuka!
+        </h2>
+        <p
+          style="
+            color: #e2e8f0;
+            width: 85%;
+            font-size: 15px;
+            margin-bottom: 25px;
+          "
+        >
+          Kecepatan bertambah drastis! Masukkan Nama & No WA untuk lanjut
+          bermain.
+        </p>
+
+        <div style="width: 80%">
+          <p
+            id="t2NameDisplay"
+            style="
+              color: #00f2fe;
+              margin-bottom: 10px;
+              font-weight: 600;
+              font-size: 16px;
+            "
+          ></p>
+          <input
+            type="tel"
+            id="t2WaInput"
+            placeholder="No WA (Contoh: 0812...)"
+            style="
+              width: 100%;
+              padding: 13px 20px;
+              margin-bottom: 5px;
+              border-radius: 12px;
+              border: 2px solid rgba(255, 255, 255, 0.1);
+              background: rgba(0, 0, 0, 0.4);
+              color: white;
+              text-align: center;
+              font-family: 'Outfit';
+              font-size: 16px;
+              outline: none;
+              box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+            "
+          />
+          <div
+            id="t2Error"
+            style="
+              color: #ff7675;
+              font-size: 13px;
+              display: none;
+              margin-bottom: 15px;
+              font-weight: 600;
+            "
+          >
+            Format WA salah! Harus mulai 08 / 628 (min 10 digit).
+          </div>
+        </div>
+
+        <button
+          id="t2LanjutBtn"
+          style="
+            padding: 12px 35px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: white;
+            font-weight: 800;
+            font-family: 'Outfit';
+            font-size: 18px;
+            margin-top: 15px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
+          "
+        >
+          <i class="fa-solid fa-gauge-high"></i> Lanjut Gas!
+        </button>
+        <p
+          id="t2BatalBtn"
+          style="
+            color: #94a3b8;
+            font-size: 13px;
+            margin-top: 20px;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: 0.3s;
+          "
+        >
+          Simpan skor & Akhiri Permainan
+        </p>
+      </div>
+
+      <div id="gameOverScreen">
+        <h2 id="screenTitle">
+          <i class="fa-solid fa-flag-checkered"></i> Cijaliti Road Race!
+        </h2>
+        <p
+          style="
+            font-size: 14px;
+            margin-top: -5px;
+            margin-bottom: 20px;
+            color: #00f2fe;
+            font-weight: 600;
+            letter-spacing: 1px;
+          "
+        >
+          Created By Dany
+        </p>
+        <p id="scoreText" class="hidden">
+          Skor Akhir: <span id="finalScore">0</span>
+        </p>
+
+        <div id="playerInputContainer" class="input-container">
+          <input
+            type="text"
+            id="playerNameInput"
+            placeholder="Masukkan Nama Anda"
+            autocomplete="off"
+          />
+        </div>
+        <div
+          id="welcomeContainer"
+          class="hidden"
+          style="margin-bottom: 20px; text-align: center"
+        >
+          <p style="color: #fff; font-size: 16px; margin: 0">
+            Halo,
+            <strong id="welcomeName" style="color: #00f2fe">Pemain</strong>!
+          </p>
+          <p
+            id="changePlayerBtn"
+            style="
+              color: #aaa;
+              font-size: 12px;
+              margin-top: 5px;
+              text-decoration: underline;
+              cursor: pointer;
+            "
+          >
+            Ganti Pemain (Reset)
+          </p>
+        </div>
+
+        <div id="carSelection" class="car-selection">
+          <p><i class="fa-solid fa-warehouse"></i> Garasi Kendaraan</p>
+          <div class="car-options">
+            <button class="car-btn selected" data-car="sport">
+              <i
+                class="fa-solid fa-car-side car-emoji"
+                style="color: #e74c3c"
+              ></i>
+              <span>Sport</span>
+            </button>
+            <button class="car-btn" data-car="classic">
+              <i class="fa-solid fa-car car-emoji" style="color: #3498db"></i>
+              <span>Klasik</span>
+            </button>
+            <button class="car-btn" data-car="monster">
+              <i
+                class="fa-solid fa-truck-pickup car-emoji"
+                style="color: #2ecc71"
+              ></i>
+              <span>Monster</span>
+            </button>
+          </div>
+        </div>
+
+        <button id="restartBtn">
+          <i class="fa-solid fa-play"></i> Mulai Gas!
+        </button>
+      </div>
+    </div>
+
+    <div class="controls-info">
+      <p>
+        Kendali: Tekan <strong>Panah Kiri / Kanan</strong> atau
+        <strong>Sentuh Layar</strong>
+      </p>
+    </div>
+
+    <div class="ad-banner">
+      <p>Biar Fokus main game, Minum Susu Kambing Etawa,</p>
+      <a
+        href="https://wa.me/6281384072641?text=Halo%20Saya%20Mau%20Fokus%20Maen%20Game%20Beli%20susu%20etawanya%20dong"
+        target="_blank"
+        class="wa-btn"
+      >
+        <i class="fa-brands fa-whatsapp"></i> Pesan via WA 081384072641
+      </a>
+    </div>
+
+    <script>
+      const canvas = document.getElementById('gameCanvas');
+      const ctx = canvas.getContext('2d');
+      const scoreDisplay = document.getElementById('scoreDisplay');
+      const gameOverScreen = document.getElementById('gameOverScreen');
+      const screenTitle = document.getElementById('screenTitle');
+      const scoreText = document.getElementById('scoreText');
+      const finalScoreDisplay = document.getElementById('finalScore');
+      const restartBtn = document.getElementById('restartBtn');
+      const carBtns = document.querySelectorAll('.car-btn');
+      const carSelectionDiv = document.getElementById('carSelection');
+      const welcomeContainer = document.getElementById('welcomeContainer');
+      const welcomeName = document.getElementById('welcomeName');
+      const changePlayerBtn = document.getElementById('changePlayerBtn');
+      const playerNameInput = document.getElementById('playerNameInput');
+      const playerInputContainer = document.getElementById(
+        'playerInputContainer',
+      );
+      const tahap2Screen = document.getElementById('tahap2Screen');
+      const t2NameDisplay = document.getElementById('t2NameDisplay');
+      const t2WaInput = document.getElementById('t2WaInput');
+      const t2Error = document.getElementById('t2Error');
+      const t2LanjutBtn = document.getElementById('t2LanjutBtn');
+      const t2BatalBtn = document.getElementById('t2BatalBtn');
+
+      let currentPlayerName = 'Pemain';
+      let currentPlayerWA = '';
+      let isRegistered = false;
+
+      function validateWA(wa) {
+        return /^(08|628)\d{8,11}$/.test(wa);
+      }
+
+      function checkRegistration() {
+        const savedName = localStorage.getItem('cji_playerName');
+        const savedWA = localStorage.getItem('cji_playerWA');
+        if (savedName && savedWA) {
+          currentPlayerName = savedName;
+          currentPlayerWA = savedWA;
+          isRegistered = true;
+
+          if (playerInputContainer)
+            playerInputContainer.classList.add('hidden');
+          if (welcomeContainer) welcomeContainer.classList.remove('hidden');
+          if (welcomeName) welcomeName.innerText = savedName;
+        } else {
+          isRegistered = false;
+          if (playerInputContainer)
+            playerInputContainer.classList.remove('hidden');
+          if (welcomeContainer) welcomeContainer.classList.add('hidden');
+        }
+      }
+
+      if (changePlayerBtn) {
+        changePlayerBtn.addEventListener('click', () => {
+          localStorage.removeItem('cji_playerName');
+          localStorage.removeItem('cji_playerWA');
+          if (playerNameInput) playerNameInput.value = '';
+          checkRegistration();
+        });
+      }
+      checkRegistration();
+
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      let engineOsc = null;
+      let engineGain = null;
+
+      const carModels = {
+        sport: {
+          color: '#e74c3c',
+          width: 42,
+          height: 80,
+          baseFreq: 80,
+          pitchMult: 12,
+          oscType: 'square',
+        },
+        classic: {
+          color: '#3498db',
+          width: 46,
+          height: 84,
+          baseFreq: 50,
+          pitchMult: 6,
+          oscType: 'sawtooth',
+        },
+        monster: {
+          color: '#2ecc71',
+          width: 58,
+          height: 90,
+          baseFreq: 35,
+          pitchMult: 3,
+          oscType: 'sawtooth',
+        },
+      };
+
+      let currentCarModel = 'sport';
+
+      carBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          carBtns.forEach((b) => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          currentCarModel = btn.getAttribute('data-car');
+        });
+      });
+
+      function playCrashSound() {
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const bufferSize = audioCtx.sampleRate * 0.5;
+        const buffer = audioCtx.createBuffer(
+          1,
+          bufferSize,
+          audioCtx.sampleRate,
+        );
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
+
+        const noiseSource = audioCtx.createBufferSource();
+        noiseSource.buffer = buffer;
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(1200, audioCtx.currentTime);
+        filter.frequency.exponentialRampToValueAtTime(
+          100,
+          audioCtx.currentTime + 0.4,
+        );
+        const gainNode = audioCtx.createGain();
+        gainNode.gain.setValueAtTime(1, audioCtx.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(
+          0.01,
+          audioCtx.currentTime + 0.5,
+        );
+        noiseSource.connect(filter);
+        filter.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        noiseSource.start();
+
+        const osc = audioCtx.createOscillator();
+        const oscGain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(150, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(
+          0.01,
+          audioCtx.currentTime + 0.5,
+        );
+        oscGain.gain.setValueAtTime(1.5, audioCtx.currentTime);
+        oscGain.gain.exponentialRampToValueAtTime(
+          0.01,
+          audioCtx.currentTime + 0.5,
+        );
+        osc.connect(oscGain);
+        oscGain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.5);
+      }
+
+      function startEngineSound() {
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        if (engineOsc) return;
+        const model = carModels[currentCarModel];
+        engineOsc = audioCtx.createOscillator();
+        engineGain = audioCtx.createGain();
+        engineOsc.type = model.oscType;
+        engineOsc.frequency.setValueAtTime(
+          model.baseFreq,
+          audioCtx.currentTime,
+        );
+        engineGain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(600, audioCtx.currentTime);
+        engineOsc.connect(filter);
+        filter.connect(engineGain);
+        engineGain.connect(audioCtx.destination);
+        engineOsc.start();
+      }
+
+      function updateEngineSound(speed) {
+        if (engineOsc && audioCtx.state === 'running') {
+          const model = carModels[currentCarModel];
+          const newFreq = model.baseFreq + speed * model.pitchMult;
+          const variance = Math.random() * 2 - 1;
+          engineOsc.frequency.setTargetAtTime(
+            newFreq + variance,
+            audioCtx.currentTime,
+            0.1,
+          );
+        }
+      }
+
+      function stopEngineSound() {
+        if (engineOsc) {
+          engineOsc.stop();
+          engineOsc.disconnect();
+          engineOsc = null;
+        }
+      }
+
+      function skorKeKata(angka) {
+        if (angka === 0) return 'nol';
+        let kata = [
+          '',
+          'satu',
+          'dua',
+          'tiga',
+          'empat',
+          'lima',
+          'enam',
+          'tujuh',
+          'delapan',
+          'sembilan',
+          'sepuluh',
+          'sebelas',
+        ];
+        if (angka < 12) return kata[angka];
+        if (angka < 20) return kata[angka - 10] + ' belas';
+        if (angka < 100) {
+          let sisa = angka % 10;
+          return (
+            kata[Math.floor(angka / 10)] +
+            ' puluh' +
+            (sisa > 0 ? ' ' + kata[sisa] : '')
+          );
+        }
+        if (angka < 200) {
+          let sisa = angka % 100;
+          return 'seratus' + (sisa > 0 ? ' ' + skorKeKata(sisa) : '');
+        }
+        if (angka < 1000) {
+          let sisa = angka % 100;
+          return (
+            kata[Math.floor(angka / 100)] +
+            ' ratus' +
+            (sisa > 0 ? ' ' + skorKeKata(sisa) : '')
+          );
+        }
+        if (angka < 2000) {
+          let sisa = angka % 1000;
+          return 'seribu' + (sisa > 0 ? ' ' + skorKeKata(sisa) : '');
+        }
+        if (angka < 1000000) {
+          let sisa = angka % 1000;
+          return (
+            skorKeKata(Math.floor(angka / 1000)) +
+            ' ribu' +
+            (sisa > 0 ? ' ' + skorKeKata(sisa) : '')
+          );
+        }
+        return angka.toString();
+      }
+
+      function speakGameOver(name, scoreAchieved) {
+        let scoreKata = skorKeKata(scoreAchieved);
+        let teks1 = 'Waduh.';
+        let teks2 = `${name}, skor kamu ${scoreKata}.`;
+
+        let url1 = `https://translate.google.com/translate_tts?ie=UTF-8&tl=id&client=tw-ob&q=${encodeURIComponent(teks1)}`;
+        let url2 = `https://translate.google.com/translate_tts?ie=UTF-8&tl=id&client=tw-ob&q=${encodeURIComponent(teks2)}`;
+
+        let ttsAudio1 = new Audio(url1);
+        let ttsAudio2 = new Audio(url2);
+        let useFallback = false;
+
+        // Putar teks kedua setelah teks pertama beres + jeda 1 Detik
+        ttsAudio1.onended = () => {
+          if (!useFallback) {
+            setTimeout(() => {
+              ttsAudio2.play().catch((e) => playFallbackPart2(teks2));
+            }, 1000); // 1 detik jeda
+          }
+        };
+
+        ttsAudio1.play().catch((e) => {
+          useFallback = true;
+          playFallbackWithPause(teks1, teks2);
+        });
+
+        function playFallbackWithPause(t1, t2) {
+          if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            let msg1 = new SpeechSynthesisUtterance(t1);
+            msg1.lang = 'id-ID';
+            msg1.onend = () => {
+              setTimeout(() => {
+                playFallbackPart2(t2);
+              }, 1000);
+            };
+            window.speechSynthesis.speak(msg1);
+          }
+        }
+
+        function playFallbackPart2(t2) {
+          if ('speechSynthesis' in window) {
+            let msg2 = new SpeechSynthesisUtterance(t2);
+            msg2.lang = 'id-ID';
+            window.speechSynthesis.speak(msg2);
+          }
+        }
+      }
+
+      const canvasWidth = 400;
+      const canvasHeight = 600;
+      const laneWidth = canvasWidth / 3;
+      const enemyCarWidth = 46;
+      const enemyCarHeight = 84;
+
+      let isGameOver = false;
+      let isPlaying = false;
+      let score = 0;
+      let animationId;
+      let baseSpeed = 5;
+      let currentSpeed = baseSpeed;
+
+      const player = {
+        width: 42,
+        height: 80,
+        color: '#e74c3c',
+        lane: 1,
+        x: 0,
+        y: 0,
+        targetX: 0,
+      };
+
+      document.addEventListener('keydown', (e) => {
+        if (isGameOver || !isPlaying) return;
+        if (
+          (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') &&
+          player.lane > 0
+        )
+          player.lane--;
+        else if (
+          (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') &&
+          player.lane < 2
+        )
+          player.lane++;
+        player.targetX =
+          player.lane * laneWidth + (laneWidth - player.width) / 2;
+      });
+
+      canvas.addEventListener('touchstart', (e) => {
+        if (isGameOver || !isPlaying) return;
+        const touchX = e.touches[0].clientX;
+        const canvasRect = canvas.getBoundingClientRect();
+        const relativeX = touchX - canvasRect.left;
+        if (relativeX < canvasWidth / 2 && player.lane > 0) player.lane--;
+        else if (relativeX >= canvasWidth / 2 && player.lane < 2) player.lane++;
+        player.targetX =
+          player.lane * laneWidth + (laneWidth - player.width) / 2;
+      });
+
+      let enemies = [];
+      let lines = [];
+      for (let i = 0; i < 6; i++) lines.push({ y: i * 120 });
+
+      function initGame() {
+        if (!isRegistered) {
+          if (playerNameInput && playerNameInput.value.trim() !== '') {
+            currentPlayerName = playerNameInput.value.trim();
+          } else {
+            currentPlayerName = 'Pemain';
+          }
+        }
+        isPlaying = true;
+        isGameOver = false;
+        score = 0;
+        currentSpeed = baseSpeed;
+        enemies = [];
+        const model = carModels[currentCarModel];
+        player.color = model.color;
+        player.width = model.width;
+        player.height = model.height;
+        player.y = canvasHeight - player.height - 20;
+        player.lane = 1;
+        player.targetX =
+          player.lane * laneWidth + (laneWidth - player.width) / 2;
+        player.x = player.targetX;
+        scoreDisplay.innerText = `Skor: ${score}`;
+        gameOverScreen.classList.add('hidden');
+        carSelectionDiv.classList.add('hidden');
+        if (playerInputContainer) playerInputContainer.classList.add('hidden');
+        spawnEnemy();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        startEngineSound();
+        if (animationId) cancelAnimationFrame(animationId);
+        loop();
+      }
+
+      function spawnEnemy() {
+        const randomLane = Math.floor(Math.random() * 3);
+        const colors = ['#8e44ad', '#f1c40f', '#d35400', '#f39c12', '#16a085'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        enemies.push({
+          x: randomLane * laneWidth + (laneWidth - enemyCarWidth) / 2,
+          y: -enemyCarHeight,
+          width: enemyCarWidth,
+          height: enemyCarHeight,
+          color: color,
+          passed: false,
+        });
+      }
+
+      function drawRect(x, y, width, height, color, radius = 0) {
+        if (radius > 0) {
+          ctx.beginPath();
+          ctx.roundRect(x, y, width, height, radius);
+          ctx.fillStyle = color;
+          ctx.fill();
+        } else {
+          ctx.fillStyle = color;
+          ctx.fillRect(x, y, width, height);
+        }
+      }
+
+      function drawRoad() {
+        drawRect(0, 0, canvasWidth, canvasHeight, '#2c3e50');
+        for (let i = 0; i < lines.length; i++) {
+          lines[i].y += currentSpeed;
+          if (lines[i].y > canvasHeight) lines[i].y = -120;
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+          ctx.fillRect(laneWidth - 3, lines[i].y, 6, 60);
+          ctx.fillRect(laneWidth * 2 - 3, lines[i].y, 6, 60);
+        }
+      }
+
+      function drawCar(car) {
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = 'rgba(0,0,0,0.6)';
+        drawRect(car.x, car.y, car.width, car.height, car.color, 8);
+        ctx.shadowBlur = 0;
+        drawRect(car.x + 4, car.y + 16, car.width - 8, 16, '#222', 3);
+        drawRect(car.x + 6, car.y + 18, car.width - 12, 12, '#7ed6df');
+        drawRect(
+          car.x + 4,
+          car.y + car.height - 22,
+          car.width - 8,
+          12,
+          '#222',
+          2,
+        );
+        drawRect(
+          car.x + 6,
+          car.y + car.height - 20,
+          car.width - 12,
+          8,
+          '#7ed6df',
+        );
+        drawRect(car.x + 4, car.y + 2, 8, 6, '#f1c40f', 2);
+        drawRect(car.x + car.width - 12, car.y + 2, 8, 6, '#f1c40f', 2);
+        drawRect(car.x - 3, car.y + 12, 4, 16, '#111', 2);
+        drawRect(car.x - 3, car.y + car.height - 28, 4, 16, '#111', 2);
+        drawRect(car.x + car.width - 1, car.y + 12, 4, 16, '#111', 2);
+        drawRect(
+          car.x + car.width - 1,
+          car.y + car.height - 28,
+          4,
+          16,
+          '#111',
+          2,
+        );
+      }
+
+      function checkCollision(rect1, rect2) {
+        const padding = 5;
+        return (
+          rect1.x + padding < rect2.x + rect2.width - padding &&
+          rect1.x + rect1.width - padding > rect2.x + padding &&
+          rect1.y + padding < rect2.y + rect2.height - padding &&
+          rect1.y + rect1.height - padding > rect2.y + padding
+        );
+      }
+
+      function handleGameOver() {
+        isGameOver = true;
+        isPlaying = false;
+        stopEngineSound();
+        playCrashSound();
+        scoreText.innerHTML = `${currentPlayerName}, Skor Kamu:<br><span id="finalScore">${score}</span>`;
+        scoreText.classList.remove('hidden');
+        carSelectionDiv.classList.remove('hidden');
+        if (playerInputContainer)
+          playerInputContainer.classList.remove('hidden');
+        screenTitle.innerHTML =
+          '<i class="fa-solid fa-car-burst"></i> Tabrakan!';
+        restartBtn.innerHTML =
+          '<i class="fa-solid fa-rotate-right"></i> Main Lagi';
+        gameOverScreen.classList.remove('hidden');
+        speakGameOver(currentPlayerName, score);
+      }
+
+      function update() {
+        player.x += (player.targetX - player.x) * 0.25;
+        updateEngineSound(currentSpeed);
+        for (let i = 0; i < enemies.length; i++) {
+          let enemy = enemies[i];
+          enemy.y += currentSpeed;
+          if (checkCollision(player, enemy)) {
+            handleGameOver();
+            return;
+          }
+          if (enemy.y > player.y + player.height && !enemy.passed) {
+            score += 10;
+            scoreDisplay.innerText = `Skor: ${score}`;
+            enemy.passed = true;
+            if (score === 100) currentSpeed += 2.5;
+            else if (score === 200) {
+              if (!isRegistered) {
+                showTahap2Registration();
+                return;
+              } else {
+                currentSpeed += 3.5;
+              }
+            } else if (score > 200 && score % 100 === 0 && currentSpeed < 25)
+              currentSpeed += 2.0;
+            else if (score % 50 === 0 && currentSpeed < 18) currentSpeed += 0.5;
+          }
+        }
+        enemies = enemies.filter((enemy) => enemy.y < canvasHeight + 100);
+        let lastEnemy = enemies[enemies.length - 1];
+        if (!lastEnemy || lastEnemy.y > enemyCarHeight + 20) {
+          const spawnChance = 0.02 + currentSpeed * 0.002;
+          if (Math.random() < spawnChance) spawnEnemy();
+        }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        drawRoad();
+        for (let enemy of enemies) drawCar(enemy);
+        drawCar(player);
+      }
+
+      function loop() {
+        if (!isPlaying) return;
+        if (isGameOver) return;
+        update();
+        draw();
+        animationId = requestAnimationFrame(loop);
+      }
+
+      function showTahap2Registration() {
+        isPlaying = false;
+        stopEngineSound();
+
+        if (t2NameDisplay && currentPlayerName !== 'Pemain') {
+          t2NameDisplay.innerText = `Halo ${currentPlayerName}! Tahap 2 butuh verifikasi WA:`;
+        } else if (t2NameDisplay) {
+          t2NameDisplay.innerText = `Tahap 2 Terbuka! Masukkan No WA Anda:`;
+        }
+
+        if (tahap2Screen) tahap2Screen.classList.remove('hidden');
+      }
+
+      if (t2LanjutBtn) {
+        t2LanjutBtn.addEventListener('click', () => {
+          const w = t2WaInput.value.trim();
+
+          if (!validateWA(w)) {
+            if (t2Error) t2Error.style.display = 'block';
+            return;
+          }
+
+          if (t2Error) t2Error.style.display = 'none';
+          // currentPlayerName sudah ada dari input depan
+          currentPlayerWA = w;
+          localStorage.setItem('cji_playerName', currentPlayerName);
+          localStorage.setItem('cji_playerWA', currentPlayerWA);
+          isRegistered = true;
+          checkRegistration();
+
+          // --- KIRIM DATA KE GOOGLE SHEETS ---
+          // Ganti URL_APP_SCRIPT_ANDA_DISINI dengan URL dari hasil Deploy "Web App" di Google Apps Script
+          const SCRIPT_URL =
+            'https://script.google.com/macros/s/AKfycbxjExSSaEGq5EFbrelTpxREQqwXlJCYy4iEKkhjMKTgg4cpI9kIz_CV7IyZFsRn5cETpA/exec';
+
+          if (SCRIPT_URL !== 'URL_APP_SCRIPT_ANDA_DISINI') {
+            const formData = new URLSearchParams();
+            formData.append('Nama', currentPlayerName);
+            formData.append('Whatsapp', currentPlayerWA);
+
+            fetch(SCRIPT_URL, {
+              method: 'POST',
+              mode: 'no-cors',
+              body: formData,
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            })
+              .then((r) => console.log('Sukses kirim form ke Google Sheet'))
+              .catch((e) => console.error('Gagal kirim form', e));
+          }
+
+          if (tahap2Screen) tahap2Screen.classList.add('hidden');
+
+          isPlaying = true;
+          currentSpeed += 3.5; // BOOST Tahap 2
+          startEngineSound();
+          if (animationId) cancelAnimationFrame(animationId);
+          loop();
+        });
+      }
+
+      if (t2BatalBtn) {
+        t2BatalBtn.addEventListener('click', () => {
+          if (tahap2Screen) tahap2Screen.classList.add('hidden');
+          handleGameOver();
+        });
+      }
+
+      restartBtn.addEventListener('click', initGame);
+
+      drawRoad();
+      const initModel = carModels[currentCarModel];
+      player.color = initModel.color;
+      player.width = initModel.width;
+      player.height = initModel.height;
+      player.y = canvasHeight - player.height - 20;
+      player.targetX = player.lane * laneWidth + (laneWidth - player.width) / 2;
+      player.x = player.targetX;
+      drawCar(player);
+    </script>
+  </body>
+</html>

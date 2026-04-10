@@ -1,0 +1,2900 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <!-- Meta Pixel -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        'script',
+        'https://connect.facebook.net/en_US/fbevents.js',
+      );
+
+      fbq('init', '4340789699511862');
+      fbq('track', 'PageView');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temukan Kartu Nama Digital untuk Usahamu — Kuis Gratis</title>
+
+    <!-- Font Awesome 6.5 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <style>
+      :root {
+        --cream: #f5f0e8;
+        --dark: #1a1612;
+        --brown: #3d2b1f;
+        --green: #2d5016;
+        --green-light: #4a7c2f;
+        --green-muted: #d4e8c2;
+        --amber: #c4851a;
+        --amber-light: #f5d98a;
+        --amber-muted: #fdf3d0;
+        --rust: #8b3a2a;
+        --sand: #e8dcc8;
+        --sand-dark: #c9b99a;
+        --white: #fdfaf5;
+        --text: #2a1f16;
+        --text-muted: #7a6a58;
+        --radius: 16px;
+        --radius-sm: 8px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'DM Sans', sans-serif;
+        background: var(--cream);
+        color: var(--text);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* ?? NOISE TEXTURE OVERLAY ?? */
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.4;
+      }
+
+      .wrap {
+        max-width: 660px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ?? HEADER ?? */
+      .site-header {
+        padding: 20px 0 16px;
+        border-bottom: 1px solid var(--sand-dark);
+        margin-bottom: 0;
+      }
+      .site-header .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-family: 'Fraunces', serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--brown);
+        letter-spacing: -0.3px;
+      }
+      .logo span {
+        color: var(--green-light);
+      }
+      .header-badge {
+        font-size: 11px;
+        font-weight: 500;
+        padding: 4px 10px;
+        background: var(--amber-muted);
+        color: var(--amber);
+        border-radius: 20px;
+        border: 1px solid var(--amber-light);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      /* ?? SCREENS ?? */
+      .screen {
+        display: none;
+      }
+      .screen.active {
+        display: block;
+      }
+
+      /* ?? ADVERTORIAL ?? */
+      .adv-hero {
+        padding: 52px 0 40px;
+        position: relative;
+      }
+      .adv-hero::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% + 40px);
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--sand-dark),
+          transparent
+        );
+      }
+      .adv-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--rust);
+        margin-bottom: 22px;
+      }
+      .adv-tag::before {
+        content: '';
+        width: 20px;
+        height: 1px;
+        background: var(--rust);
+      }
+      .adv-headline {
+        font-family: 'Fraunces', serif;
+        font-size: clamp(28px, 5vw, 42px);
+        font-weight: 700;
+        line-height: 1.15;
+        color: var(--dark);
+        margin-bottom: 18px;
+        letter-spacing: -1px;
+      }
+      .adv-headline em {
+        font-style: italic;
+        color: var(--green-light);
+      }
+      .adv-subhead {
+        font-size: 16px;
+        line-height: 1.75;
+        color: var(--text-muted);
+        max-width: 540px;
+        margin-bottom: 32px;
+      }
+
+      /* Stats bar */
+      .stats-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--sand-dark);
+        border: 1px solid var(--sand-dark);
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin: 32px 0;
+      }
+      .stat-cell {
+        background: var(--white);
+        padding: 20px 18px;
+        text-align: center;
+      }
+      .stat-cell:hover {
+        background: var(--amber-muted);
+        transition: background 0.2s;
+      }
+      .stat-num {
+        font-family: 'Fraunces', serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--green);
+        line-height: 1;
+      }
+      .stat-txt {
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-top: 5px;
+        line-height: 1.4;
+      }
+
+      /* Article body */
+      .adv-body {
+        margin: 28px 0;
+      }
+      .adv-body p {
+        font-size: 15px;
+        line-height: 1.85;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+      }
+      .adv-body p strong {
+        color: var(--text);
+        font-weight: 500;
+      }
+      .adv-pull {
+        border-left: 3px solid var(--amber);
+        padding: 14px 20px;
+        margin: 24px 0;
+        background: var(--amber-muted);
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      }
+      .adv-pull p {
+        font-family: 'Fraunces', serif;
+        font-size: 17px;
+        font-style: italic;
+        color: var(--brown);
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      /* Testimonials */
+      .testi-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 24px 0;
+      }
+      @media (max-width: 480px) {
+        .testi-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .testi-card {
+        background: var(--white);
+        border: 1px solid var(--sand);
+        border-radius: var(--radius);
+        padding: 16px;
+      }
+      .testi-stars {
+        color: var(--amber);
+        font-size: 13px;
+        margin-bottom: 8px;
+        letter-spacing: 2px;
+      }
+      .testi-text {
+        font-size: 13px;
+        line-height: 1.65;
+        color: var(--text-muted);
+        margin-bottom: 10px;
+      }
+      .testi-name {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--brown);
+      }
+      .testi-role {
+        font-size: 11px;
+        color: var(--text-muted);
+      }
+
+      /* CTA Section */
+      .adv-cta-box {
+        background: var(--dark);
+        border-radius: var(--radius);
+        padding: 32px 28px;
+        margin-top: 36px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .adv-cta-box::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: var(--green);
+        opacity: 0.15;
+      }
+      .adv-cta-box h2 {
+        font-family: 'Fraunces', serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 10px;
+        position: relative;
+      }
+      .adv-cta-box p {
+        font-size: 14px;
+        color: var(--sand);
+        margin-bottom: 22px;
+        line-height: 1.6;
+        position: relative;
+      }
+      .btn-main {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 100px;
+        background: var(--amber);
+        color: var(--dark);
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s;
+        position: relative;
+        font-family: 'DM Sans', sans-serif;
+      }
+      .btn-main:hover {
+        background: var(--amber-light);
+        transform: translateY(-1px);
+      }
+      .btn-main svg {
+        width: 16px;
+        height: 16px;
+      }
+      .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 11px 22px;
+        border-radius: 100px;
+        background: transparent;
+        color: var(--text-muted);
+        font-size: 14px;
+        font-weight: 400;
+        cursor: pointer;
+        border: 1px solid var(--sand-dark);
+        transition: all 0.2s;
+        font-family: 'DM Sans', sans-serif;
+      }
+      .btn-ghost:hover {
+        background: var(--white);
+        color: var(--text);
+      }
+      .btn-green {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 100px;
+        background: var(--green);
+        color: var(--white);
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s;
+        font-family: 'DM Sans', sans-serif;
+      }
+      .btn-green:hover {
+        background: var(--green-light);
+        transform: translateY(-1px);
+      }
+
+      /* ?? LEAD CAPTURE ?? */
+      .lead-screen {
+        padding: 52px 0 40px;
+      }
+      .lead-kicker {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--green-light);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .lead-kicker::before {
+        content: '';
+        width: 20px;
+        height: 1px;
+        background: var(--green-light);
+      }
+      .lead-screen h2 {
+        font-family: 'Fraunces', serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+      .lead-screen p {
+        font-size: 14px;
+        color: var(--text-muted);
+        margin-bottom: 24px;
+        line-height: 1.7;
+      }
+      .input-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      @media (max-width: 480px) {
+        .input-row {
+          grid-template-columns: 1fr;
+        }
+      }
+      .field label {
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--text-muted);
+        margin-bottom: 6px;
+        letter-spacing: 0.3px;
+      }
+      .field input,
+      .field select {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid var(--sand-dark);
+        border-radius: var(--radius-sm);
+        background: var(--white);
+        font-size: 14px;
+        color: var(--text);
+        font-family: 'DM Sans', sans-serif;
+        transition: border-color 0.2s;
+        -webkit-appearance: none;
+        appearance: none;
+      }
+      .field input:focus,
+      .field select:focus {
+        outline: none;
+        border-color: var(--green-light);
+      }
+      .field input::placeholder {
+        color: var(--sand-dark);
+      }
+      .btn-row-lead {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+
+      /* ?? QUIZ ?? */
+      .quiz-screen {
+        padding: 36px 0 40px;
+      }
+      .quiz-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 28px;
+      }
+      .quiz-step {
+        font-size: 12px;
+        color: var(--text-muted);
+        font-weight: 400;
+      }
+      .quiz-counter {
+        font-family: 'Fraunces', serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--green);
+      }
+      .progress-track {
+        height: 3px;
+        background: var(--sand);
+        border-radius: 3px;
+        overflow: hidden;
+        margin-bottom: 30px;
+      }
+      .progress-fill {
+        height: 100%;
+        background: var(--green-light);
+        border-radius: 3px;
+        transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .quiz-question {
+        font-family: 'Fraunces', serif;
+        font-size: 22px;
+        font-weight: 500;
+        color: var(--dark);
+        line-height: 1.35;
+        margin-bottom: 8px;
+      }
+      .quiz-hint {
+        font-size: 13px;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+      }
+      .opt-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+      .opt {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 16px;
+        border: 1.5px solid var(--sand);
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        background: var(--white);
+        transition: all 0.15s;
+      }
+      .opt:hover {
+        border-color: var(--green-muted);
+        background: #f9fdf4;
+      }
+      .opt.selected {
+        border-color: var(--green-light);
+        background: #f2fae8;
+      }
+      .opt-radio {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid var(--sand-dark);
+        flex-shrink: 0;
+        margin-top: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.15s;
+      }
+      .opt.selected .opt-radio {
+        border-color: var(--green-light);
+        background: var(--green-light);
+      }
+      .opt-radio-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+        display: none;
+      }
+      .opt.selected .opt-radio-dot {
+        display: block;
+      }
+      .opt-body {
+        flex: 1;
+      }
+      .opt-title {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text);
+      }
+      .opt-sub {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 3px;
+      }
+      .quiz-nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 10px 16px;
+        border-radius: 100px;
+        background: transparent;
+        color: var(--text-muted);
+        font-size: 13px;
+        cursor: pointer;
+        border: 1px solid var(--sand-dark);
+        transition: all 0.2s;
+        font-family: 'DM Sans', sans-serif;
+      }
+      .btn-back:hover {
+        background: var(--white);
+      }
+      .btn-next {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        border-radius: 100px;
+        background: var(--green);
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s;
+        font-family: 'DM Sans', sans-serif;
+        opacity: 0.4;
+        pointer-events: none;
+      }
+      .btn-next.ready {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .btn-next.ready:hover {
+        background: var(--green-light);
+      }
+      .tip-strip {
+        background: var(--amber-muted);
+        border-radius: var(--radius-sm);
+        padding: 10px 14px;
+        margin-bottom: 18px;
+        border-left: 3px solid var(--amber);
+      }
+      .tip-strip p {
+        font-size: 12px;
+        color: var(--amber);
+        line-height: 1.5;
+      }
+
+      /* ?? PROCESSING ?? */
+      .processing-screen {
+        padding: 80px 0;
+        text-align: center;
+      }
+      .spinner {
+        width: 52px;
+        height: 52px;
+        margin: 0 auto 24px;
+        border: 3px solid var(--sand);
+        border-top-color: var(--green-light);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .processing-screen h3 {
+        font-family: 'Fraunces', serif;
+        font-size: 22px;
+        font-weight: 500;
+        color: var(--dark);
+        margin-bottom: 8px;
+      }
+      .processing-screen p {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+      .processing-dots span {
+        animation: blink 1.2s infinite;
+        display: inline-block;
+      }
+      .processing-dots span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .processing-dots span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      @keyframes blink {
+        0%,
+        80%,
+        100% {
+          opacity: 0;
+        }
+        40% {
+          opacity: 1;
+        }
+      }
+
+      /* ?? RESULT ?? */
+      .result-screen {
+        padding: 40px 0 60px;
+      }
+      .result-hero {
+        background: var(--dark);
+        border-radius: var(--radius);
+        padding: 32px 28px;
+        margin-bottom: 24px;
+        position: relative;
+        overflow: hidden;
+      }
+      .result-hero::before {
+        content: '';
+        position: absolute;
+        bottom: -60px;
+        right: -60px;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: var(--green);
+        opacity: 0.12;
+      }
+      .result-hero::after {
+        content: '';
+        position: absolute;
+        top: -40px;
+        left: -40px;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        background: var(--amber);
+        opacity: 0.08;
+      }
+      .result-badge-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+        position: relative;
+      }
+      .result-type-pill {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.12);
+        color: var(--sand);
+      }
+      .result-score-pill {
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 20px;
+        background: var(--amber);
+        color: var(--dark);
+      }
+      .result-hero h1 {
+        font-family: 'Fraunces', serif;
+        font-size: clamp(22px, 4vw, 30px);
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1.2;
+        margin-bottom: 10px;
+        position: relative;
+      }
+      .result-hero h1 em {
+        font-style: italic;
+        color: var(--amber-light);
+      }
+      .result-hero p {
+        font-size: 14px;
+        color: var(--sand);
+        line-height: 1.7;
+        position: relative;
+        max-width: 520px;
+      }
+
+      /* Score bar */
+      .score-bar-wrap {
+        margin: 16px 0 0;
+        position: relative;
+      }
+      .score-bar-track {
+        height: 6px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+      }
+      .score-bar-fill {
+        height: 100%;
+        border-radius: 6px;
+        background: var(--amber);
+        width: 0;
+        transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .score-bar-label {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+      }
+      .score-bar-label span {
+        font-size: 11px;
+        color: var(--sand);
+      }
+      .score-bar-label strong {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--amber);
+      }
+
+      /* Feature cards */
+      .features-section {
+        margin: 24px 0;
+      }
+      .features-title {
+        font-family: 'Fraunces', serif;
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--dark);
+        margin-bottom: 14px;
+      }
+      .feat-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      @media (max-width: 480px) {
+        .feat-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .feat-card {
+        background: var(--white);
+        border: 1px solid var(--sand);
+        border-radius: var(--radius);
+        padding: 16px;
+        transition: all 0.2s;
+      }
+      .feat-card:hover {
+        border-color: var(--green-muted);
+        background: #f9fdf4;
+      }
+      .feat-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: var(--green-muted);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #2d5016;
+      }
+      .feat-card h4 {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--dark);
+        margin-bottom: 4px;
+      }
+      .feat-card p {
+        font-size: 12px;
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+
+      /* Metrics */
+      .metrics-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin: 20px 0;
+      }
+      .metric-card {
+        background: var(--sand);
+        border-radius: var(--radius-sm);
+        padding: 14px 12px;
+        text-align: center;
+      }
+      .metric-val {
+        font-family: 'Fraunces', serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--brown);
+        line-height: 1;
+      }
+      .metric-lbl {
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-top: 4px;
+        line-height: 1.3;
+      }
+
+      /* CTA Result */
+      .result-cta {
+        background: var(--green);
+        border-radius: var(--radius);
+        padding: 28px 24px;
+        margin-top: 24px;
+        text-align: center;
+      }
+      .result-cta h3 {
+        font-family: 'Fraunces', serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 8px;
+      }
+      .result-cta p {
+        font-size: 14px;
+        color: var(--green-muted);
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+      .result-cta .btn-row-cta {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* ?? SUCCESS ?? */
+      .success-screen {
+        padding: 80px 0;
+        text-align: center;
+      }
+      .success-icon {
+        width: 64px;
+        height: 64px;
+        background: var(--green-muted);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        margin: 0 auto 20px;
+      }
+      .success-screen h2 {
+        font-family: 'Fraunces', serif;
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 10px;
+      }
+      .success-screen p {
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin-bottom: 24px;
+      }
+      .success-detail {
+        background: var(--white);
+        border: 1px solid var(--sand);
+        border-radius: var(--radius);
+        padding: 20px;
+        margin: 0 auto 24px;
+        max-width: 360px;
+        text-align: left;
+      }
+      .success-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--sand);
+      }
+      .success-row:last-child {
+        border-bottom: none;
+      }
+      .success-row span {
+        font-size: 13px;
+        color: var(--text-muted);
+      }
+      .success-row strong {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text);
+      }
+
+      /* Footer */
+      .site-footer {
+        border-top: 1px solid var(--sand);
+        padding: 24px 0;
+        margin-top: 40px;
+        text-align: center;
+      }
+      .site-footer p {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+
+      /* Animations */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .screen.active {
+        animation: fadeUp 0.35s ease forwards;
+      }
+
+      /* ?? POST-QUIZ LEAD CAPTURE ?? */
+      .lead-reveal-box {
+        text-align: center;
+        padding: 40px 0 28px;
+      }
+      .lead-reveal-emoji {
+        font-size: 48px;
+        margin-bottom: 16px;
+        line-height: 1;
+        animation: bounceIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      @keyframes bounceIn {
+        0% {
+          transform: scale(0.6);
+          opacity: 0;
+        }
+        70% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .lead-kicker {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--green-light);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .lead-screen h2 {
+        font-family: 'Fraunces', serif;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+      .lead-sub {
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.7;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+      .lead-form-card {
+        background: var(--white);
+        border: 1px solid var(--sand);
+        border-radius: var(--radius);
+        padding: 24px 20px;
+        margin-top: 4px;
+      }
+      .lead-form-label {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--text-muted);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--sand);
+      }
+      .req {
+        color: var(--rust);
+      }
+      .lead-privacy {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin: 14px 0 18px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        line-height: 1.5;
+      }
+      .btn-row-lead {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      /* blur teaser effect */
+      .lead-blur-teaser {
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .lead-blur-teaser::after {
+        content: 'Isi data untuk melihat hasil';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          var(--cream) 60%
+        );
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 12px;
+        font-size: 13px;
+        color: var(--text-muted);
+        border-radius: var(--radius);
+      }
+      .blur-preview {
+        filter: blur(6px);
+        pointer-events: none;
+        user-select: none;
+        background: var(--white);
+        border: 1px solid var(--sand);
+        border-radius: var(--radius);
+        padding: 20px;
+        height: 120px;
+      }
+
+      /* ?? FREE TRIAL BANNER ?? */
+      .free-banner {
+        background: var(--dark);
+        border: 1.5px solid var(--amber);
+        border-radius: var(--radius);
+        padding: 24px 22px;
+        margin-top: 16px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      .free-banner::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        background: var(--amber);
+        opacity: 0.07;
+      }
+      .free-banner-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--amber);
+        color: var(--dark);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-bottom: 12px;
+      }
+      .free-banner h4 {
+        font-family: 'Fraunces', serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1.3;
+        margin-bottom: 8px;
+        position: relative;
+      }
+      .free-banner h4 em {
+        font-style: italic;
+        color: var(--amber-light);
+      }
+      .free-banner p {
+        font-size: 13px;
+        color: var(--sand);
+        line-height: 1.65;
+        margin-bottom: 18px;
+        position: relative;
+      }
+      .btn-free {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 14px 24px;
+        border-radius: 100px;
+        background: var(--amber);
+        color: var(--dark);
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s;
+        font-family: 'DM Sans', sans-serif;
+        text-decoration: none;
+        letter-spacing: 0.2px;
+      }
+      .btn-free:hover {
+        background: var(--amber-light);
+        transform: translateY(-2px);
+      }
+      .btn-free:active {
+        transform: scale(0.98);
+      }
+      .free-banner-note {
+        font-size: 11px;
+        color: var(--sand-dark);
+        margin-top: 10px;
+        position: relative;
+      }
+      .free-banner-features {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin: 12px 0 16px;
+      }
+      .free-feat {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        color: var(--sand);
+      }
+      .free-feat-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--amber);
+        flex-shrink: 0;
+      }
+
+      /* Adv inline free teaser */
+      .adv-free-strip {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        flex-wrap: wrap;
+        background: var(--amber-muted);
+        border: 1px solid var(--amber-light);
+        border-radius: var(--radius);
+        padding: 16px 18px;
+        margin: 20px 0;
+      }
+      .adv-free-strip-text h4 {
+        font-family: 'Fraunces', serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--brown);
+        margin-bottom: 3px;
+      }
+      .adv-free-strip-text p {
+        font-size: 12px;
+        color: var(--amber);
+        margin: 0;
+      }
+      .btn-free-sm {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 10px 20px;
+        border-radius: 100px;
+        flex-shrink: 0;
+        background: var(--amber);
+        color: var(--dark);
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s;
+        font-family: 'DM Sans', sans-serif;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .btn-free-sm:hover {
+        background: var(--amber-light);
+      }
+
+      /* ?? FREE SCREEN ?? */
+      .free-recap-card {
+        background: var(--white);
+        border: 1px solid var(--sand);
+        border-radius: var(--radius);
+        padding: 16px 18px;
+        margin-bottom: 20px;
+      }
+      .free-recap-label {
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--text-muted);
+        margin-bottom: 12px;
+      }
+      .free-recap-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .free-recap-icon {
+        font-size: 32px;
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      .free-recap-type {
+        font-family: 'Fraunces', serif;
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--dark);
+        margin-bottom: 3px;
+      }
+      .free-recap-score {
+        font-size: 12px;
+        color: var(--green-light);
+        font-weight: 500;
+      }
+      .free-form-wrap {
+        background: var(--white);
+        border: 1.5px solid var(--amber-light);
+        border-radius: var(--radius);
+        padding: 22px 20px;
+      }
+      .free-form-title {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--sand);
+      }
+      .free-privacy {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+        line-height: 1.5;
+      }
+
+      /* ?? FIELD VALIDATION ERRORS ?? */
+      input.field-error,
+      select.field-error {
+        border-color: #e24b4a !important;
+        background: #fcebeb !important;
+      }
+      .field-err-msg {
+        display: block;
+        font-size: 11px;
+        color: #a32d2d;
+        margin-top: 4px;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <div class="logo">kartu<span>digital</span>.umk</div>
+        <span class="header-badge">Gratis · 3 menit</span>
+      </div>
+    </header>
+
+    <!-- ???????????????? SCREEN: ADVERTORIAL ???????????????? -->
+    <div id="s-adv" class="screen active">
+      <div class="wrap">
+        <section class="adv-hero">
+          <h1 class="adv-headline">
+            Usahamu bagus —<br />
+            tapi apakah mudah<br />
+            <em>ditemukan?</em>
+          </h1>
+          <p class="adv-subhead">
+            Setiap hari ribuan calon pelanggan kehilangan jalan menuju usaha UMK
+            karena linknya berceceran. Satu halaman bisa mengubah itu.
+          </p>
+
+          <div class="stats-strip">
+            <div class="stat-cell">
+              <div class="stat-num">
+                <i
+                  class="fa-solid fa-magnifying-glass"
+                  style="
+                    font-size: 18px;
+                    color: #4a7c2f;
+                    display: block;
+                    margin-bottom: 4px;
+                  "
+                ></i
+                >73%
+              </div>
+              <div class="stat-txt">
+                calon pembeli cek digital dulu sebelum beli
+              </div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-num">
+                <i
+                  class="fa-solid fa-clock"
+                  style="
+                    font-size: 18px;
+                    color: #4a7c2f;
+                    display: block;
+                    margin-bottom: 4px;
+                  "
+                ></i
+                >8 dtk
+              </div>
+              <div class="stat-txt">
+                waktu sebelum pengunjung pergi jika bingung
+              </div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-num">
+                <i
+                  class="fa-solid fa-arrow-trend-up"
+                  style="
+                    font-size: 18px;
+                    color: #4a7c2f;
+                    display: block;
+                    margin-bottom: 4px;
+                  "
+                ></i
+                >3×
+              </div>
+              <div class="stat-txt">
+                lebih tinggi konversi dengan Kartu Nama Digital
+              </div>
+            </div>
+          </div>
+
+          <div class="adv-body">
+            <p>
+              Bayangkan ini: seseorang melihat kontenmu di TikTok, tertarik,
+              buka profil — dan hanya ada satu link Instagram. Mereka klik. Di
+              sana tidak ada harga. Mereka cari tombol WA. Tidak ketemu.
+              <strong>Mereka pergi.</strong>
+            </p>
+            <p>
+              Ini bukan tentang produk yang kurang bagus. Ini tentang jalur
+              menuju pembelian yang terlalu berliku. Kartu Nama Digital
+              memperbaiki itu — satu halaman, semua pintu masuk, siap diakses
+              kapanpun.
+            </p>
+
+            <div class="adv-pull">
+              <p>
+                "Kartu Nama Digital bukan sekadar kumpulan link. Ini adalah
+                strategi — menyambut pelanggan, menjelaskan siapa kamu, dan
+                mengarahkan mereka ke langkah berikutnya."
+              </p>
+            </div>
+
+            <p>
+              Tapi tidak semua usaha butuh fitur yang sama. Warung makan butuh
+              menu digital dan tombol order. Butik fashion butuh galeri estetik.
+              Jasa butuh portofolio dan booking.
+              <strong
+                >Kuis ini membantu kamu menemukan yang tepat — gratis.</strong
+              >
+            </p>
+          </div>
+
+          <div class="testi-grid">
+            <div class="testi-card">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testi-text">
+                "Sejak pakai Kartu Nama Digital, omzet naik 40% dalam 2 bulan.
+                Pelanggan langsung order tanpa tanya-tanya dulu."
+              </p>
+              <div class="testi-name">Dewi Rahayu</div>
+              <div class="testi-role">Katering rumahan, Bandung</div>
+            </div>
+            <div class="testi-card">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="testi-text">
+                "Dulu copas link satu-satu di caption. Sekarang satu link saja,
+                lebih rapi dan terlihat jauh lebih profesional."
+              </p>
+              <div class="testi-name">Reza Firmansyah</div>
+              <div class="testi-role">Brand fashion lokal, Yogyakarta</div>
+            </div>
+          </div>
+
+          <div class="adv-cta-box">
+            <h2>Cari tahu Kartu Nama Digital<br />yang tepat untuk usahamu</h2>
+            <p>
+              Kuis gratis ini hanya butuh 3 menit. Hasilnya personal dan
+              langsung bisa diterapkan.
+            </p>
+            <button
+              class="btn-main"
+              onclick="
+                show('s-q1');
+                initQ(1);
+              "
+            >
+              Mulai kuis gratis <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- ???????????? SCREEN: POST-QUIZ DATA CAPTURE ???????????? -->
+    <div id="s-lead" class="screen">
+      <div class="wrap">
+        <section class="lead-screen">
+          <div class="lead-reveal-box">
+            <div class="lead-reveal-emoji" id="lead-preview-icon">
+              &#127919;
+            </div>
+            <div class="lead-kicker">Hasil kuis sudah siap!</div>
+            <h2>
+              Satu langkah lagi untuk<br />lihat profil Kartu Nama Digitalmu
+            </h2>
+            <p class="lead-sub">
+              Masukkan data usahamu agar hasil bisa kami personalisasi dan tim
+              kami bisa bantu kamu mulai. Gratis, tanpa spam.
+            </p>
+          </div>
+
+          <div class="lead-form-card">
+            <div class="lead-form-label">Data usaha kamu</div>
+
+            <div class="input-row">
+              <div class="field">
+                <label
+                  ><i
+                    class="fa-solid fa-user"
+                    style="color: var(--text-muted); margin-right: 4px"
+                  ></i
+                  >Nama kamu <span class="req">*</span></label
+                >
+                <input
+                  type="text"
+                  id="f-name"
+                  placeholder="Contoh: Dewi Rahayu"
+                  maxlength="50"
+                />
+                <div id="f-name-slot" style="min-height: 0"></div>
+              </div>
+              <div class="field">
+                <label
+                  ><i
+                    class="fa-solid fa-store"
+                    style="color: var(--text-muted); margin-right: 4px"
+                  ></i
+                  >Nama usaha <span class="req">*</span></label
+                >
+                <input
+                  type="text"
+                  id="f-biz"
+                  placeholder="Contoh: Warung Bu Dewi"
+                  maxlength="60"
+                />
+                <div id="f-biz-slot" style="min-height: 0"></div>
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="field">
+                <label
+                  ><i
+                    class="fa-brands fa-whatsapp"
+                    style="color: var(--text-muted); margin-right: 4px"
+                  ></i
+                  >Nomor WhatsApp <span class="req">*</span></label
+                >
+                <input
+                  type="tel"
+                  id="f-wa"
+                  placeholder="08xxxxxxxxxx"
+                  maxlength="13"
+                  oninput="
+                    this.value = this.value.replace(/[^0-9+]/g, '');
+                    livePhoneCheck('f-wa', this.value);
+                  "
+                />
+                <div id="f-wa-slot" style="min-height: 0"></div>
+              </div>
+              <div class="field">
+                <label
+                  ><i
+                    class="fa-solid fa-location-dot"
+                    style="color: var(--text-muted); margin-right: 4px"
+                  ></i
+                  >Kota usaha</label
+                >
+                <input
+                  type="text"
+                  id="f-city"
+                  placeholder="Contoh: Bandung"
+                  maxlength="40"
+                />
+              </div>
+            </div>
+            <div class="field" style="margin-bottom: 4px">
+              <label
+                ><i
+                  class="fa-solid fa-globe"
+                  style="color: var(--text-muted); margin-right: 4px"
+                ></i
+                >Platform online yang sudah kamu punya</label
+              >
+              <select id="f-platform">
+                <option value="">
+                  &#8212; Pilih yang paling utama &#8212;
+                </option>
+                <option value="Instagram">Instagram</option>
+                <option value="TikTok">TikTok</option>
+                <option value="WhatsApp Business">WhatsApp Business</option>
+                <option value="Tokopedia / Shopee">Tokopedia / Shopee</option>
+                <option value="Website sendiri">Website sendiri</option>
+                <option value="Belum ada">Belum ada</option>
+              </select>
+            </div>
+
+            <div class="lead-privacy">
+              <i class="fa-solid fa-shield-halved"></i> Data kamu aman &mdash;
+              tidak akan dijual atau disebar ke pihak ketiga.
+            </div>
+
+            <div class="btn-row-lead">
+              <button class="btn-green" onclick="goLead()">
+                Lihat hasil kuis saya <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <button class="btn-back" onclick="goQ(5)">
+                <i class="fa-solid fa-rotate-left"></i> Ubah jawaban
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <option value="">— Pilih yang paling utama —</option>
+    <!-- ???????????????? SCREENS: QUIZ Q1–Q5 ???????????????? -->
+    <div id="s-q1" class="screen">
+      <div class="wrap">
+        <section class="quiz-screen" id="qsec-1"></section>
+      </div>
+    </div>
+    <div id="s-q2" class="screen">
+      <div class="wrap">
+        <section class="quiz-screen" id="qsec-2"></section>
+      </div>
+    </div>
+    <div id="s-q3" class="screen">
+      <div class="wrap">
+        <section class="quiz-screen" id="qsec-3"></section>
+      </div>
+    </div>
+    <div id="s-q4" class="screen">
+      <div class="wrap">
+        <section class="quiz-screen" id="qsec-4"></section>
+      </div>
+    </div>
+    <div id="s-q5" class="screen">
+      <div class="wrap">
+        <section class="quiz-screen" id="qsec-5"></section>
+      </div>
+    </div>
+
+    <!-- ???????????????? SCREEN: PROCESSING ???????????????? -->
+    <div id="s-proc" class="screen">
+      <div class="wrap">
+        <div class="processing-screen">
+          <i
+            class="fa-solid fa-circle-notch fa-spin"
+            style="
+              font-size: 40px;
+              color: #4a7c2f;
+              display: block;
+              text-align: center;
+              margin-bottom: 20px;
+            "
+          ></i>
+          <h3>
+            Menganalisis profil usahamu<span class="processing-dots"
+              ><span>.</span><span>.</span><span>.</span></span
+            >
+          </h3>
+          <p>
+            Sebentar, kami sedang menyiapkan rekomendasi yang tepat untukmu.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ???????????????? SCREEN: RESULT ???????????????? -->
+    <div id="s-result" class="screen">
+      <div class="wrap">
+        <section class="result-screen">
+          <div class="result-hero">
+            <div class="result-badge-row">
+              <span class="result-type-pill" id="r-pill">Hasil Kuis</span>
+              <span class="result-score-pill" id="r-score-pill">Skor: —</span>
+              <span
+                id="r-name-badge"
+                style="
+                  display: none;
+                  font-size: 11px;
+                  font-weight: 500;
+                  padding: 4px 10px;
+                  border-radius: 20px;
+                  background: rgba(255, 255, 255, 0.15);
+                  color: var(--sand);
+                "
+              ></span>
+            </div>
+            <h1 id="r-title"><em>"—"</em></h1>
+            <p id="r-intro">—</p>
+            <div class="score-bar-wrap">
+              <div class="score-bar-track">
+                <div class="score-bar-fill" id="r-bar"></div>
+              </div>
+              <div class="score-bar-label">
+                <span>Kesiapan digital</span>
+                <strong id="r-score-txt">0%</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="features-section">
+            <h2 class="features-title">Fitur yang kamu butuhkan</h2>
+            <div class="feat-grid" id="r-feats"></div>
+          </div>
+
+          <div class="metrics-row" id="r-metrics"></div>
+
+          <div class="result-cta">
+            <h3 id="r-cta-title">Siap buat Kartu Nama Digitalmu?</h3>
+            <p id="r-cta-desc">
+              Daftar sekarang dan dapatkan Kartu Nama Digital yang sudah
+              disesuaikan dengan profil usahamu.
+            </p>
+            <div class="btn-row-cta">
+              <button class="btn-main" onclick="goFreeScreen()">
+                Coba Gratis Sekarang <i class="fa-solid fa-arrow-right"></i>
+              </button>
+              <a
+                id="r-wa-btn"
+                href="#"
+                target="_blank"
+                style="text-decoration: none"
+              >
+                <button
+                  class="btn-ghost"
+                  style="color: #9fe1cb; border-color: rgba(159, 225, 203, 0.3)"
+                >
+                  <i class="fa-brands fa-whatsapp"></i> Tanya via WhatsApp
+                </button>
+              </a>
+              <button
+                class="btn-ghost"
+                onclick="show('s-adv')"
+                style="
+                  color: rgba(159, 225, 203, 0.6);
+                  border-color: rgba(159, 225, 203, 0.2);
+                  font-size: 12px;
+                  padding: 8px 14px;
+                "
+              >
+                Ulangi kuis
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- ???????????????? SCREEN: COBA GRATIS ???????????????? -->
+    <div id="s-free" class="screen">
+      <div class="wrap">
+        <section style="padding: 40px 0 60px">
+          <!-- Result recap pill -->
+          <div style="text-align: center; margin-bottom: 28px">
+            <span
+              class="free-banner-badge"
+              style="margin-bottom: 12px; display: inline-flex"
+              ><i class="fa-solid fa-tag"></i> Penawaran Spesial</span
+            >
+            <h2
+              style="
+                font-family: 'Fraunces', serif;
+                font-size: 28px;
+                font-weight: 700;
+                color: var(--dark);
+                line-height: 1.25;
+                margin-bottom: 8px;
+              "
+            >
+              Coba
+              <em style="font-style: italic; color: var(--green-light)"
+                >Kartu Nama Digital</em
+              ><br />kamu secara gratis!
+            </h2>
+            <p
+              style="
+                font-size: 14px;
+                color: var(--text-muted);
+                line-height: 1.7;
+                max-width: 400px;
+                margin: 0 auto;
+              "
+            >
+              Berdasarkan hasil kuismu, kamu sudah tahu Kartu Nama Digital
+              seperti apa yang dibutuhkan usahamu. Saatnya dibuat!
+            </p>
+          </div>
+
+          <!-- Recap card hasil kuis -->
+          <div class="free-recap-card">
+            <div class="free-recap-label">Hasil kuis kamu</div>
+            <div class="free-recap-row">
+              <span class="free-recap-icon" id="fr-icon">&#127919;</span>
+              <div>
+                <div class="free-recap-type" id="fr-type">—</div>
+                <div class="free-recap-score" id="fr-score">
+                  Skor kesiapan digital: —
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form isi data ulang -->
+          <div class="free-form-wrap">
+            <div class="free-form-title">Lengkapi data untuk daftar gratis</div>
+
+            <div class="input-row">
+              <div class="field">
+                <label
+                  ><i
+                    class="fa-solid fa-user"
+                    style="color: var(--text-muted); margin-right: 4px"
+                  ></i
+                  >Nama kamu <span class="req">*</span></label
+                >
+                <input
+                  type="text"
+                  id="ff-name"
+                  placeholder="Contoh: Dewi Rahayu"
+                  maxlength="50"
+                />
+                <div id="ff-name-slot" style="min-height: 0"></div>
+              </div>
+              <div class="field">
+                <label
+                  ><i
+                    class="fa-solid fa-store"
+                    style="color: var(--text-muted); margin-right: 4px"
+                  ></i
+                  >Nama usaha <span class="req">*</span></label
+                >
+                <input
+                  type="text"
+                  id="ff-biz"
+                  placeholder="Contoh: Warung Bu Dewi"
+                  maxlength="60"
+                />
+                <div id="ff-biz-slot" style="min-height: 0"></div>
+              </div>
+            </div>
+            <div class="field" style="margin-bottom: 16px">
+              <label
+                ><i
+                  class="fa-brands fa-whatsapp"
+                  style="color: var(--text-muted); margin-right: 4px"
+                ></i
+                >Nomor WhatsApp <span class="req">*</span></label
+              >
+              <input
+                type="tel"
+                id="ff-wa"
+                placeholder="08xxxxxxxxxx"
+                maxlength="13"
+                oninput="
+                  this.value = this.value.replace(/[^0-9+]/g, '');
+                  livePhoneCheck('ff-wa', this.value);
+                "
+                style="max-width: 300px"
+              />
+              <div id="ff-wa-slot" style="min-height: 0"></div>
+            </div>
+
+            <div class="free-privacy">
+              <i class="fa-solid fa-shield-halved"></i> Data aman &mdash; hanya
+              digunakan untuk keperluan pembuatan akun.
+            </div>
+
+            <a
+              id="free-register-link"
+              href="https://nexpedia.biz.id/register/"
+              target="_blank"
+              rel="noopener"
+              style="display: block; text-decoration: none; margin-top: 4px"
+            >
+              <button class="btn-free" onclick="saveFreeData()">
+                <i class="fa-solid fa-rocket"></i>
+                Buat Kartu Nama Digital Gratis Sekarang
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </a>
+            <p
+              style="
+                text-align: center;
+                font-size: 11px;
+                color: var(--text-muted);
+                margin-top: 10px;
+              "
+            >
+              Gratis selamanya &nbsp;&#183;&nbsp; Aktif dalam 5 menit
+              &nbsp;&#183;&nbsp; Tanpa keahlian teknis
+            </p>
+          </div>
+
+          <div style="text-align: center; margin-top: 20px">
+            <button class="btn-back" onclick="show('s-result')">
+              <i class="fa-solid fa-arrow-left"></i> Kembali ke hasil kuis
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- ???????????????? SCREEN: SUCCESS ???????????????? -->
+    <div id="s-success" class="screen">
+      <div class="wrap">
+        <div class="success-screen">
+          <div class="success-icon">
+            <i
+              class="fa-solid fa-circle-check"
+              style="font-size: 32px; color: #1d9e75"
+            ></i>
+          </div>
+          <h2>Data tersimpan!</h2>
+          <p>
+            Hasil kuis dan profilmu sudah masuk ke sistem kami.<br />Tim kami
+            akan menghubungi kamu dalam 1×24 jam.
+          </p>
+          <div class="success-detail" id="success-summary"></div>
+          <button class="btn-green" onclick="show('s-adv')">
+            Kembali ke beranda
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          © 2025 KartuDigital.UMK · Dibuat dengan ? untuk pelaku usaha Indonesia
+        </p>
+      </div>
+    </footer>
+    <!-- Script -->
+    <script>
+      // ???????????????????????????????
+      // CONFIGURATION
+      // ???????????????????????????????
+
+      // GANTI dengan URL Google Apps Script kamu
+      // Cara buat: buka Google Sheet ? Extensions ? Apps Script ? Deploy as Web App
+      const SHEET_URL =
+        'https://script.google.com/macros/s/AKfycbytDM27jVG9mNUtiCHnN1yh2FDex8T6uEJBLHPw7LeLOsMaW8G77_IqsLU6FH33sjMWOQ/exec';
+
+      // WhatsApp nomor bisnis (ganti dengan nomor kamu, format internasional tanpa +)
+      const WA_NUMBER = '6281384072641';
+
+      // ???????????????????????????????
+      // QUIZ DATA
+      // ???????????????????????????????
+      const QUESTIONS = [
+        {
+          q: 'Apa jenis usaha kamu?',
+          hint: 'Pilih yang paling menggambarkan usahamu saat ini.',
+          opts: [
+            {
+              t: 'Kuliner / makanan & minuman',
+              s: 'Warung, katering, kafe rumahan, cloud kitchen',
+            },
+            {
+              t: 'Fashion & aksesoris',
+              s: 'Baju, tas, sepatu, perhiasan, aksesori',
+            },
+            {
+              t: 'Jasa & servis',
+              s: 'Salon, bengkel, laundry, les privat, kursus',
+            },
+            {
+              t: 'Kerajinan & handmade',
+              s: 'Produk buatan tangan, souvenir, dekorasi',
+            },
+            {
+              t: 'Reseller / dropship',
+              s: 'Jual produk supplier atau brand lain',
+            },
+            {
+              t: 'Lainnya / belum pasti',
+              s: 'Jenis usaha yang belum disebutkan',
+            },
+          ],
+        },
+        {
+          q: 'Dari mana pelanggan paling sering menemukanmu?',
+          hint: 'Jawab jujur — ini menentukan fitur terpenting di Kartu Nama Digitalmu.',
+          tip: 'Pilih sumber traffic yang paling sering menghasilkan pelanggan nyata, bukan yang kamu posting paling sering.',
+          opts: [
+            {
+              t: 'Instagram & TikTok',
+              s: 'Lewat konten, reels, atau postingan',
+            },
+            {
+              t: 'WhatsApp dari kenalan',
+              s: 'Rekomendasi mulut ke mulut atau grup WA',
+            },
+            {
+              t: 'Marketplace (Shopee/Tokopedia)',
+              s: 'Toko online sudah aktif',
+            },
+            {
+              t: 'Google / Google Maps',
+              s: 'Dicari lewat keyword atau lokasi',
+            },
+            {
+              t: 'Belum banyak yang tahu',
+              s: 'Masih di tahap merintis dan membangun awareness',
+            },
+          ],
+        },
+        {
+          q: 'Apa yang paling sering ditanyakan calon pelanggan sebelum beli?',
+          hint: 'Pertanyaan yang paling sering masuk ke WA atau DM kamu.',
+          opts: [
+            {
+              t: 'Harga & daftar produk / menu',
+              s: 'Ingin tahu berapa harga dan ada apa saja',
+            },
+            {
+              t: 'Lokasi & jam operasional',
+              s: 'Di mana alamatnya dan kapan bisa dikunjungi',
+            },
+            {
+              t: 'Cara pesan / cara order',
+              s: 'Langkah-langkah untuk membeli',
+            },
+            {
+              t: 'Testimoni & kualitas produk',
+              s: 'Apakah produknya bagus dan terpercaya?',
+            },
+            {
+              t: 'Ketersediaan stok / jadwal',
+              s: 'Masih ada tidak atau kapan bisa?',
+            },
+          ],
+        },
+        {
+          q: 'Seberapa aktif kamu di media sosial sekarang?',
+          hint: 'Ini menentukan apakah Kartu Nama Digitalmu perlu fitur konten otomatis.',
+          opts: [
+            {
+              t: 'Aktif banget, hampir tiap hari posting',
+              s: 'Konten rutin di Instagram, TikTok, atau keduanya',
+            },
+            { t: '2–3 kali seminggu', s: 'Cukup aktif tapi tidak tiap hari' },
+            {
+              t: 'Jarang — sibuk urus usaha',
+              s: 'Tidak sempat posting rutin karena operasional',
+            },
+            {
+              t: 'Belum aktif sama sekali',
+              s: 'Baru mau mulai atau belum sempat',
+            },
+          ],
+        },
+        {
+          q: 'Apa tantangan digital terbesar usahamu saat ini?',
+          hint: 'Pilih satu yang paling terasa menghambat pertumbuhan.',
+          opts: [
+            {
+              t: 'Susah dapat pelanggan baru',
+              s: 'Awareness dan jangkauan masih terbatas',
+            },
+            {
+              t: 'Pelanggan bingung cara order',
+              s: 'Proses pembelian tidak jelas atau ribet',
+            },
+            {
+              t: 'Kewalahan kelola banyak platform',
+              s: 'Terlalu banyak akun yang harus dipantau',
+            },
+            {
+              t: 'Tidak tahu apakah promosi efektif',
+              s: 'Tidak ada data atau analitik yang jelas',
+            },
+            {
+              t: 'Tampilan kurang profesional',
+              s: 'Ingin terlihat lebih kredibel dan terpercaya',
+            },
+          ],
+        },
+      ];
+
+      // ???????????????????????????????
+      // PROFILES
+      // ???????????????????????????????
+      const PROFILES = [
+        {
+          key: 'Warung Digital',
+          pill: 'Kuliner',
+          title: 'Kartu Nama Digital "Warung Digital"',
+          titleEm: 'Warung Digital',
+          intro:
+            'Pelanggan kuliner butuh jawaban cepat: ada apa, berapa, dan di mana. Kartu Nama Digitalmu harus menjawab tiga hal itu dalam 5 detik pertama.',
+          features: [
+            {
+              icon: "<i class='fa-solid fa-link'></i>",
+              t: 'Multilink toko & media sosial',
+              d: 'Satukan semua link — GoFood, GrabFood, WA, Instagram, TikTok — dalam satu halaman yang rapi',
+            },
+            {
+              icon: "<i class='fa-solid fa-file-lines'></i>",
+              t: 'Halaman promosi sekejap',
+              d: 'Buat halaman promo menu baru, paket hemat, atau diskon khusus tanpa perlu desainer',
+            },
+            {
+              icon: "<i class='fa-solid fa-pen-to-square'></i>",
+              t: 'Artikel & konten masuk Google',
+              d: 'Tulis info usahamu — lokasi, menu, jam buka — agar mudah ditemukan di Google oleh pelanggan baru',
+            },
+            {
+              icon: "<i class='fa-solid fa-location-dot'></i>",
+              t: 'Profil usaha lengkap',
+              d: 'Tampilkan nama usaha, alamat, foto, dan jam operasional dalam satu halaman profesional',
+            },
+            {
+              icon: "<i class='fa-solid fa-chart-bar'></i>",
+              t: 'Statistik kunjungan halaman',
+              d: 'Lihat berapa orang yang mengunjungi halamanmu setiap hari dan dari mana mereka datang',
+            },
+            {
+              icon: "<i class='fa-solid fa-magnifying-glass'></i>",
+              t: 'Terindeks mesin pencari Google',
+              d: 'Kartu Nama Digital kamu muncul di hasil pencarian Google saat orang mencari usaha seperti milikmu',
+            },
+          ],
+          m1: { v: '3×', l: 'kenaikan order rata-rata' },
+          m2: { v: '< 5 dtk', l: 'waktu ambil keputusan' },
+          m3: { v: 'Gratis', l: 'update menu kapanpun' },
+          ctaTitle: 'Buat menu digital kamu sekarang',
+          ctaDesc:
+            'Tidak perlu cetak brosur lagi. Update harga dan menu langsung dari HP.',
+        },
+        {
+          key: 'Etalase Fashion',
+          pill: 'Fashion',
+          title: 'Kartu Nama Digital "Etalase Fashion"',
+          titleEm: 'Etalase Fashion',
+          intro:
+            'Di fashion, visual adalah argumen terkuat. Kartu Nama Digitalmu harus terlihat seperti toko yang estetik — bukan sekadar daftar link.',
+          features: [
+            {
+              icon: "<i class='fa-solid fa-link'></i>",
+              t: 'Multilink toko & media sosial',
+              d: 'Shopee, Tokopedia, TikTok Shop, Instagram — semua terhubung dari satu halaman cantik',
+            },
+            {
+              icon: "<i class='fa-solid fa-file-lines'></i>",
+              t: 'Halaman promosi koleksi baru',
+              d: 'Buat landing page koleksi terbaru atau flash sale dalam hitungan menit tanpa coding',
+            },
+            {
+              icon: "<i class='fa-solid fa-pen-to-square'></i>",
+              t: 'Artikel produk masuk Google',
+              d: 'Deskripsi produk dan koleksimu bisa muncul di Google — pelanggan baru datang dari pencarian organik',
+            },
+            {
+              icon: "<i class='fa-solid fa-image'></i>",
+              t: 'Galeri foto produk',
+              d: 'Tampilkan foto produk terbaik langsung di halaman utama agar pengunjung langsung tertarik',
+            },
+            {
+              icon: "<i class='fa-solid fa-chart-bar'></i>",
+              t: 'Pantau klik & traffic',
+              d: 'Tahu produk mana yang paling banyak diklik dan dari platform mana pengunjung datang',
+            },
+            {
+              icon: "<i class='fa-solid fa-magnifying-glass'></i>",
+              t: 'Terindeks mesin pencari Google',
+              d: 'Namamu muncul saat orang mencari jenis produk fashion yang kamu jual di Google',
+            },
+          ],
+          m1: { v: '2.4×', l: 'klik ke marketplace' },
+          m2: { v: '+60%', l: 'chat WA masuk' },
+          m3: { v: 'Estetik', l: 'tampilan profesional' },
+          ctaTitle: 'Buat etalase digitalmu',
+          ctaDesc:
+            'Tampil lebih profesional — semua link dalam satu halaman yang cantik.',
+        },
+        {
+          key: 'Kartu Nama Pro',
+          pill: 'Jasa & Servis',
+          title: 'Kartu Nama Digital "Kartu Nama Pro"',
+          titleEm: 'Kartu Nama Pro',
+          intro:
+            'Usaha jasa menjual kepercayaan sebelum menjual layanan. Kartu Nama Digitalmu adalah CV digital yang bekerja 24 jam.',
+          features: [
+            {
+              icon: "<i class='fa-solid fa-link'></i>",
+              t: 'Multilink layanan & media sosial',
+              d: 'Semua channel kontak dan portofolio dalam satu halaman — WA, Instagram, website, marketplace',
+            },
+            {
+              icon: "<i class='fa-solid fa-file-lines'></i>",
+              t: 'Halaman promosi layanan',
+              d: 'Buat halaman khusus untuk paket promo, penawaran spesial, atau layanan baru dengan cepat',
+            },
+            {
+              icon: "<i class='fa-solid fa-pen-to-square'></i>",
+              t: 'Artikel keahlian masuk Google',
+              d: 'Tulis artikel tentang layananmu agar muncul di Google saat calon pelanggan mencari jasa seperti milikmu',
+            },
+            {
+              icon: "<i class='fa-solid fa-star'></i>",
+              t: 'Profil profesional & testimoni',
+              d: 'Tampilkan portofolio, keahlian, dan ulasan pelanggan dalam satu halaman yang meyakinkan',
+            },
+            {
+              icon: "<i class='fa-solid fa-chart-bar'></i>",
+              t: 'Statistik pengunjung',
+              d: 'Pantau berapa prospek yang melihat profil dan halaman penawaranmu setiap hari',
+            },
+            {
+              icon: "<i class='fa-solid fa-magnifying-glass'></i>",
+              t: 'Terindeks mesin pencari Google',
+              d: 'Profilmu muncul di halaman 1 Google saat orang mencari jasa atau servis di kotamu',
+            },
+          ],
+          m1: { v: '5×', l: 'lebih dipercaya pelanggan baru' },
+          m2: { v: '?70%', l: 'pertanyaan berulang berkurang' },
+          m3: { v: '24 jam', l: 'booking bisa kapanpun' },
+          ctaTitle: 'Buat profil profesionalmu',
+          ctaDesc:
+            'Jadikan Kartu Nama Digital senjata utama untuk memenangkan kepercayaan pelanggan baru.',
+        },
+        {
+          key: 'Studio Kreatif',
+          pill: 'Kerajinan',
+          title: 'Kartu Nama Digital "Studio Kreatif"',
+          titleEm: 'Studio Kreatif',
+          intro:
+            'Produk handmade punya cerita di baliknya — dan cerita itulah yang membedakanmu dari produk massal.',
+          features: [
+            {
+              icon: "<i class='fa-solid fa-link'></i>",
+              t: 'Multilink toko & portofolio',
+              d: 'Satukan Tokopedia, Shopee, Instagram, TikTok, dan website portofolio dalam satu link mudah',
+            },
+            {
+              icon: "<i class='fa-solid fa-file-lines'></i>",
+              t: 'Halaman promosi & pre-order',
+              d: 'Buat halaman khusus untuk pre-order, open custom, atau koleksi edisi terbatas dengan mudah',
+            },
+            {
+              icon: "<i class='fa-solid fa-pen-to-square'></i>",
+              t: 'Artikel & cerita produk ke Google',
+              d: 'Tulis kisah di balik karyamu agar muncul di Google dan menarik pembeli yang menghargai produk handmade',
+            },
+            {
+              icon: "<i class='fa-solid fa-palette'></i>",
+              t: 'Galeri karya terbaik',
+              d: 'Tampilkan foto-foto karya terbaikmu langsung di halaman utama sebagai portofolio visual',
+            },
+            {
+              icon: "<i class='fa-solid fa-chart-bar'></i>",
+              t: 'Lacak minat pengunjung',
+              d: 'Lihat karya mana yang paling banyak dilihat dan dari mana calon pembeli datang',
+            },
+            {
+              icon: "<i class='fa-solid fa-magnifying-glass'></i>",
+              t: 'Terindeks mesin pencari Google',
+              d: 'Karyamu ditemukan di Google saat orang mencari produk handmade atau souvenir unik',
+            },
+          ],
+          m1: { v: '+80%', l: 'engagement produk' },
+          m2: { v: 'Custom', l: 'order lebih mudah' },
+          m3: { v: 'Unik', l: 'tampilan sesuai brand' },
+          ctaTitle: 'Tampilkan karya terbaikmu',
+          ctaDesc:
+            'Buat Kartu Nama Digital yang menceritakan siapa kamu dan mengapa produkmu spesial.',
+        },
+        {
+          key: 'Hub Multi-Platform',
+          pill: 'Reseller',
+          title: 'Kartu Nama Digital "Hub Multi-Platform"',
+          titleEm: 'Hub Multi-Platform',
+          intro:
+            'Sebagai reseller, kamu bermain di banyak platform. Kartu Nama Digitalmu adalah kantor pusat yang menyatukan semuanya.',
+          features: [
+            {
+              icon: "<i class='fa-solid fa-link'></i>",
+              t: 'Multilink semua platform sekaligus',
+              d: 'Semua toko dan akun sosialmu — Shopee, Tokopedia, TikTok, WA, IG — dalam satu link yang dibagikan ke mana saja',
+            },
+            {
+              icon: "<i class='fa-solid fa-file-lines'></i>",
+              t: 'Halaman promosi produk & diskon',
+              d: 'Buat landing page khusus untuk promo supplier atau flash sale tanpa bantuan siapapun',
+            },
+            {
+              icon: "<i class='fa-solid fa-pen-to-square'></i>",
+              t: 'Artikel produk masuk Google',
+              d: 'Buat konten tentang produk yang kamu jual agar muncul di pencarian Google secara organik',
+            },
+            {
+              icon: "<i class='fa-solid fa-chart-bar'></i>",
+              t: 'Analitik klik per platform',
+              d: 'Tahu persis platform mana yang paling banyak menghasilkan kunjungan dan penjualan',
+            },
+            {
+              icon: "<i class='fa-solid fa-bell'></i>",
+              t: 'Update promo tanpa ganti link',
+              d: 'Ganti banner dan info promo kapanpun langsung dari HP — link-mu tetap sama',
+            },
+            {
+              icon: "<i class='fa-solid fa-magnifying-glass'></i>",
+              t: 'Terindeks mesin pencari Google',
+              d: 'Halamanmu muncul di Google sehingga pelanggan baru bisa menemukan tokomu tanpa harus di-share dulu',
+            },
+          ],
+          m1: { v: '1 link', l: 'untuk semua platform' },
+          m2: { v: '+45%', l: 'efisiensi promosi' },
+          m3: { v: 'Data', l: 'analitik tersedia' },
+          ctaTitle: 'Satukan semua linkmu sekarang',
+          ctaDesc:
+            'Stop copas link satu-satu. Satu Kartu Nama Digital rapi untuk semua platformmu.',
+        },
+        {
+          key: 'Hub Multi-Platform',
+          pill: 'Umum',
+          title: 'Kartu Nama Digital "Serba Bisa"',
+          titleEm: 'Serba Bisa',
+          intro:
+            'Apapun jenis usahamu, Kartu Nama Digital yang fleksibel bisa menjadi pusat digital yang tumbuh bersama usahamu.',
+          features: [
+            {
+              icon: "<i class='fa-solid fa-link'></i>",
+              t: 'Multilink toko & media sosial',
+              d: 'Semua link usahamu dalam satu halaman — marketplace, WA, sosmed, website — rapi dan profesional',
+            },
+            {
+              icon: "<i class='fa-solid fa-file-lines'></i>",
+              t: 'Halaman promosi & landing page',
+              d: 'Buat halaman promo, penawaran spesial, atau produk unggulan dalam hitungan menit',
+            },
+            {
+              icon: "<i class='fa-solid fa-pen-to-square'></i>",
+              t: 'Artikel & konten masuk Google',
+              d: 'Tulis konten tentang usahamu agar ditemukan secara organik di mesin pencari Google',
+            },
+            {
+              icon: "<i class='fa-solid fa-image'></i>",
+              t: 'Profil usaha visual & lengkap',
+              d: 'Foto, deskripsi, kontak, dan semua info penting tersaji dalam satu tampilan yang menarik',
+            },
+            {
+              icon: "<i class='fa-solid fa-chart-bar'></i>",
+              t: 'Statistik kunjungan real-time',
+              d: 'Pantau traffic harian, tahu dari mana pengunjung datang, dan ukur efektivitas promosimu',
+            },
+            {
+              icon: "<i class='fa-solid fa-magnifying-glass'></i>",
+              t: 'Terindeks mesin pencari Google',
+              d: 'Usahamu bisa ditemukan di Google — gratis, organik, tanpa iklan berbayar',
+            },
+          ],
+          m1: { v: '1 link', l: 'untuk semua kebutuhan' },
+          m2: { v: 'Mudah', l: 'dikelola sendiri' },
+          m3: { v: 'Gratis', l: 'mulai tanpa biaya' },
+          ctaTitle: 'Mulai Kartu Nama Digital pertamamu',
+          ctaDesc:
+            'Daftar gratis dan buat Kartu Nama Digital yang profesional dalam 10 menit.',
+        },
+      ];
+
+      // ???????????????????????????????
+      // STATE
+      // ???????????????????????????????
+      const ans = {};
+      let userData = {};
+      let currentProfile = null;
+      let currentScore = 0;
+
+      // ???????????????????????????????
+      // HELPERS
+      // ???????????????????????????????
+      function show(id) {
+        document
+          .querySelectorAll('.screen')
+          .forEach((s) => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function cleanupDetachedLeadNodes() {
+        const leadScreen = document.getElementById('s-lead');
+        const firstQuizScreen = document.getElementById('s-q1');
+        if (!leadScreen || !firstQuizScreen) return;
+
+        let node = leadScreen.nextSibling;
+        while (node && node !== firstQuizScreen) {
+          const nextNode = node.nextSibling;
+          const isComment = node.nodeType === Node.COMMENT_NODE;
+          const isWhitespace =
+            node.nodeType === Node.TEXT_NODE && !node.textContent.trim();
+
+          if (!isComment && !isWhitespace) {
+            node.remove();
+          }
+          node = nextNode;
+        }
+      }
+
+      cleanupDetachedLeadNodes();
+
+      function initQ(n) {
+        const q = QUESTIONS[n - 1];
+        const sec = document.getElementById('qsec-' + n);
+        const pct = Math.round((n / QUESTIONS.length) * 100);
+        const selected = ans[n] !== undefined ? ans[n] : -1;
+
+        // Build opts HTML safely
+        let optsHtml = '';
+        q.opts.forEach(function (o, i) {
+          var sel = selected === i ? ' selected' : '';
+          optsHtml +=
+            '<div class="opt' +
+            sel +
+            '" onclick="selectOpt(' +
+            n +
+            ',' +
+            i +
+            ',this)">' +
+            '<div class="opt-radio"><div class="opt-radio-dot"></div></div>' +
+            '<div class="opt-body">' +
+            '<div class="opt-title">' +
+            o.t +
+            '</div>' +
+            '<div class="opt-sub">' +
+            o.s +
+            '</div>' +
+            '</div></div>';
+        });
+
+        var tipHtml = q.tip
+          ? '<div class="tip-strip"><p>' + q.tip + '</p></div>'
+          : '';
+        var backOnclick = n > 1 ? 'goQ(' + (n - 1) + ')' : "show('s-adv')";
+        var isLast = n === QUESTIONS.length;
+        var nextLabel = isLast
+          ? 'Lihat hasil saya <i class="fa-solid fa-arrow-right"></i>'
+          : 'Lanjut <i class="fa-solid fa-arrow-right"></i>';
+        var nextOnclick = isLast ? 'showLeadGate()' : 'goQ(' + (n + 1) + ')';
+        var readyClass = selected >= 0 ? ' ready' : '';
+
+        sec.innerHTML =
+          '' +
+          '<div class="quiz-top">' +
+          '<span class="quiz-step">Pertanyaan ' +
+          n +
+          ' dari ' +
+          QUESTIONS.length +
+          '</span>' +
+          '<span class="quiz-counter">' +
+          pct +
+          '%</span>' +
+          '</div>' +
+          '<div class="progress-track"><div class="progress-fill" style="width:' +
+          pct +
+          '%"></div></div>' +
+          '<h2 class="quiz-question">' +
+          q.q +
+          '</h2>' +
+          '<p class="quiz-hint">' +
+          q.hint +
+          '</p>' +
+          tipHtml +
+          '<div class="opt-list">' +
+          optsHtml +
+          '</div>' +
+          '<div class="quiz-nav">' +
+          '<button class="btn-back" onclick="' +
+          backOnclick +
+          '">\u2190 Kembali</button>' +
+          '<button class="btn-next' +
+          readyClass +
+          '" id="btn-q' +
+          n +
+          '" onclick="' +
+          nextOnclick +
+          '">' +
+          nextLabel +
+          '</button>' +
+          '</div>';
+      }
+
+      function selectOpt(qNum, idx, el) {
+        var sec = document.getElementById('qsec-' + qNum);
+        sec.querySelectorAll('.opt').forEach(function (o) {
+          o.classList.remove('selected');
+        });
+        el.classList.add('selected');
+        ans[qNum] = idx;
+        var btn = document.getElementById('btn-q' + qNum);
+        if (btn) btn.classList.add('ready');
+      }
+
+      function goQ(n) {
+        initQ(n);
+        show('s-q' + n);
+      }
+
+      function validatePhone(num) {
+        var clean = num.replace(/[\s\-\.\(\)]/g, '');
+        if (clean.startsWith('+62')) clean = '0' + clean.slice(3);
+        else if (clean.startsWith('62')) clean = '0' + clean.slice(2);
+        // Harus diawali 08, minimal 12 digit total (08 + 10 angka)
+        return /^08[0-9]{10,11}$/.test(clean);
+      }
+
+      function showFieldError(fieldId, msg) {
+        var el = document.getElementById(fieldId);
+        if (!el) return;
+        el.style.borderColor = '#E24B4A';
+        el.style.background = '#FCEBEB';
+        var errId = fieldId + '-err';
+        var existing = document.getElementById(errId);
+        if (existing) {
+          existing.textContent = msg;
+          return;
+        }
+        var div = document.createElement('div');
+        div.id = errId;
+        div.style.cssText =
+          'display:flex;align-items:flex-start;gap:5px;margin-top:6px;padding:8px 10px;background:#FCEBEB;border:1px solid #F09595;border-radius:6px;';
+        div.innerHTML =
+          '<span style="color:#A32D2D;font-size:14px;flex-shrink:0">&#9888;</span>' +
+          '<span style="color:#791F1F;font-size:12px;line-height:1.5;font-weight:500">' +
+          msg +
+          '</span>';
+        var slot = document.getElementById(fieldId + '-slot');
+        if (slot) {
+          slot.innerHTML = '';
+          slot.appendChild(div);
+        } else {
+          el.insertAdjacentElement('afterend', div);
+        }
+      }
+
+      function clearFieldError(fieldId) {
+        var el = document.getElementById(fieldId);
+        if (!el) return;
+        el.style.borderColor = '';
+        el.style.background = '';
+        var err = document.getElementById(fieldId + '-err');
+        if (err) err.remove();
+        var slot = document.getElementById(fieldId + '-slot');
+        if (slot) slot.innerHTML = '';
+      }
+
+      function goLead() {
+        var name = document.getElementById('f-name').value.trim();
+        var biz = document.getElementById('f-biz').value.trim();
+        var wa = document.getElementById('f-wa').value.trim();
+        var valid = true;
+
+        clearFieldError('f-name');
+        clearFieldError('f-biz');
+        clearFieldError('f-wa');
+
+        if (!name) {
+          showFieldError('f-name', 'Nama tidak boleh kosong');
+          valid = false;
+        }
+        if (!biz) {
+          showFieldError('f-biz', 'Nama usaha tidak boleh kosong');
+          valid = false;
+        }
+        if (!wa) {
+          showFieldError('f-wa', 'Nomor WhatsApp tidak boleh kosong');
+          valid = false;
+        } else if (!validatePhone(wa)) {
+          showFieldError(
+            'f-wa',
+            'Nomor WA tidak valid. Harus diawali 08 dan minimal 12 angka. Contoh: 081384072641',
+          );
+          valid = false;
+        }
+
+        if (!valid) {
+          // Scroll to first error
+          var firstErr = document.querySelector('[id$="-err"]');
+          if (firstErr)
+            firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        userData = {
+          name,
+          biz,
+          wa,
+          city: document.getElementById('f-city').value.trim(),
+          platform: document.getElementById('f-platform').value,
+        };
+        processResult();
+      }
+
+      // ???????????????????????????????
+      // LEAD GATE (after quiz, before result)
+      // ???????????????????????????????
+      function showLeadGate() {
+        if (ans[5] === undefined) return;
+        // Pre-compute profile to show teaser emoji
+        const pi = computeProfile();
+        const p = PROFILES[pi];
+        show('s-lead');
+        const icon = document.getElementById('lead-preview-icon');
+        if (icon) icon.innerHTML = p.features[0].icon;
+      }
+
+      // ???????????????????????????????
+      // RESULT LOGIC
+      // ???????????????????????????????
+      function computeProfile() {
+        const a1 = ans[1] || 0;
+        const map = [0, 1, 2, 3, 4, 5];
+        return Math.min(map[a1] || 0, PROFILES.length - 1);
+      }
+
+      function computeScore() {
+        let s = 55;
+        if (ans[2] !== undefined) s += [14, 9, 11, 11, 5][ans[2]] || 7;
+        if (ans[4] !== undefined) s += [15, 11, 6, 3][ans[4]] || 5;
+        if (ans[5] !== undefined) s += [6, 8, 11, 13, 9][ans[5]] || 6;
+        return Math.min(s, 97);
+      }
+
+      function processResult() {
+        if (ans[5] === undefined) return;
+        show('s-proc');
+
+        const pi = computeProfile();
+        currentProfile = PROFILES[pi];
+        currentScore = computeScore();
+
+        const payload = {
+          timestamp: new Date().toLocaleString('id-ID'),
+          nama: userData.name || '—',
+          usaha: userData.biz || '—',
+          whatsapp: userData.wa || '—',
+          kota: userData.city || '—',
+          platform: userData.platform || '—',
+          profil_knd: currentProfile.key,
+        };
+
+        // Send to Google Sheet
+        fetch(SHEET_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        }).catch(() => {});
+
+        setTimeout(
+          () => renderResult(currentProfile, currentScore, payload),
+          1800,
+        );
+      }
+
+      function renderResult(p, score, payload) {
+        // Hero
+        document.getElementById('r-pill').textContent = p.pill;
+        if (userData.name) {
+          const nameBadge = document.getElementById('r-name-badge');
+          if (nameBadge) {
+            nameBadge.textContent = 'Untuk: ' + userData.name;
+            nameBadge.style.display = 'inline-block';
+          }
+        }
+        document.getElementById('r-score-pill').textContent = 'Skor: ' + score;
+        const greeting = userData.name ? `${userData.name}, ini ` : 'Ini ';
+        document.getElementById('r-title').innerHTML =
+          greeting + `Kartu Nama Digital <em>"${p.titleEm}"</em>`;
+        document.getElementById('r-intro').textContent = p.intro;
+
+        // Features
+        const fg = document.getElementById('r-feats');
+        fg.innerHTML = p.features
+          .map(
+            (f) => `
+    <div class="feat-card">
+      <div class="feat-icon">${f.icon}</div>
+      <h4>${f.t}</h4>
+      <p>${f.d}</p>
+    </div>
+  `,
+          )
+          .join('');
+
+        // Metrics
+        const mr = document.getElementById('r-metrics');
+        mr.innerHTML = [p.m1, p.m2, p.m3]
+          .map(
+            (m) => `
+    <div class="metric-card">
+      <div class="metric-val">${m.v}</div>
+      <div class="metric-lbl">${m.l}</div>
+    </div>
+  `,
+          )
+          .join('');
+
+        // CTA
+        document.getElementById('r-cta-title').textContent = p.ctaTitle;
+        document.getElementById('r-cta-desc').textContent = p.ctaDesc;
+
+        // WA button
+        const waMsg = encodeURIComponent(
+          `Halo! Saya tertarik membuat Kartu Nama Digital untuk usaha saya.\n` +
+            `Nama: ${payload.nama}\nUsaha: ${payload.usaha}\n` +
+            `Tipe Kartu Nama Digital saya: ${p.key} (Skor: ${score})\n\n` +
+            `Saya tertarik untuk konsultasi lebih lanjut.`,
+        );
+        document.getElementById('r-wa-btn').href =
+          `https://wa.me/${WA_NUMBER}?text=${waMsg}`;
+
+        show('s-result');
+
+        // Animate score bar
+        setTimeout(() => {
+          document.getElementById('r-bar').style.width = score + '%';
+          document.getElementById('r-score-txt').textContent = score + '%';
+        }, 300);
+
+        // Success summary
+        const ss = document.getElementById('success-summary');
+        if (ss)
+          ss.innerHTML = `
+    <div class="success-row"><span>Nama</span><strong>${payload.nama}</strong></div>
+    <div class="success-row"><span>Usaha</span><strong>${payload.usaha}</strong></div>
+    <div class="success-row"><span>Profil Kartu Nama Digital</span><strong>${p.key}</strong></div>
+    <div class="success-row"><span>Skor kesiapan digital</span><strong>${score}/100</strong></div>
+  `;
+      }
+
+      // ???????????????????????????????
+      // FREE SCREEN LOGIC
+      // ???????????????????????????????
+      function goFreeScreen() {
+        // Pre-fill form with data from lead form if already filled
+        const nameEl = document.getElementById('ff-name');
+        const bizEl = document.getElementById('ff-biz');
+        const waEl = document.getElementById('ff-wa');
+        if (nameEl && userData.name) nameEl.value = userData.name;
+        if (bizEl && userData.biz) bizEl.value = userData.biz;
+        if (waEl && userData.wa) waEl.value = userData.wa;
+
+        // Fill recap card
+        if (currentProfile) {
+          const iconEl = document.getElementById('fr-icon');
+          const typeEl = document.getElementById('fr-type');
+          const scoreEl = document.getElementById('fr-score');
+          if (iconEl) iconEl.innerHTML = currentProfile.features[0].icon;
+          if (typeEl)
+            typeEl.textContent =
+              '"' + currentProfile.titleEm + '" — ' + currentProfile.pill;
+          if (scoreEl)
+            scoreEl.textContent =
+              'Skor kesiapan digital: ' + currentScore + '/100';
+        }
+        show('s-free');
+      }
+
+      function saveFreeData() {
+        var name = (document.getElementById('ff-name')?.value || '').trim();
+        var biz = (document.getElementById('ff-biz')?.value || '').trim();
+        var wa = (document.getElementById('ff-wa')?.value || '').trim();
+        var valid = true;
+
+        clearFieldError('ff-name');
+        clearFieldError('ff-biz');
+        clearFieldError('ff-wa');
+
+        if (!name) {
+          showFieldError('ff-name', 'Nama tidak boleh kosong');
+          valid = false;
+        }
+        if (!biz) {
+          showFieldError('ff-biz', 'Nama usaha tidak boleh kosong');
+          valid = false;
+        }
+        if (!wa) {
+          showFieldError('ff-wa', 'Nomor WhatsApp tidak boleh kosong');
+          valid = false;
+        } else if (!validatePhone(wa)) {
+          showFieldError(
+            'ff-wa',
+            'Nomor WA tidak valid. Harus diawali 08 dan minimal 12 angka. Contoh: 081384072641',
+          );
+          valid = false;
+        }
+        if (!valid) {
+          var firstErr = document.querySelector('[id$="-err"]');
+          if (firstErr)
+            firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+        // Update userData with latest values
+        userData.name = name;
+        userData.biz = biz;
+        userData.wa = wa;
+        // Send to sheet
+        const payload = {
+          timestamp: new Date().toLocaleString('id-ID'),
+          nama: name,
+          usaha: biz,
+          whatsapp: wa,
+          kota: userData.city || '—',
+          platform: userData.platform || '—',
+          profil_knd: currentProfile?.key || '—',
+          source: 'coba_gratis',
+        };
+        fetch(SHEET_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        }).catch(() => {});
+      }
+
+      function livePhoneCheck(fieldId, val) {
+        var el = document.getElementById(fieldId);
+        if (!val) {
+          clearFieldError(fieldId);
+          if (el) {
+            el.style.borderColor = '';
+            el.style.background = '';
+          }
+          return;
+        }
+        var clean = val.replace(/[\s\-\.\(\)]/g, '');
+        if (clean.startsWith('+62')) clean = '0' + clean.slice(3);
+        else if (clean.startsWith('62')) clean = '0' + clean.slice(2);
+        // Mulai validasi setelah 12 karakter diketik
+        if (clean.length >= 12) {
+          if (/^08[0-9]{10,11}$/.test(clean)) {
+            clearFieldError(fieldId);
+            if (el) {
+              el.style.borderColor = '#1D9E75';
+              el.style.background = '#F2FAE8';
+            }
+          } else {
+            showFieldError(
+              fieldId,
+              'Nomor tidak valid. Harus diawali 08 dan minimal 12 angka. Contoh: 081384072641',
+            );
+          }
+        } else {
+          clearFieldError(fieldId);
+          if (el) {
+            el.style.borderColor = '';
+            el.style.background = '';
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
